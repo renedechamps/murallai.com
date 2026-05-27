@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Arrest Warrant &amp; Extradition to Spain: What Your Firm Needs to Know | Muralla AI</title>
+    <meta name="description" content="Comprehensive guide to European Arrest Warrants (EAW) and extradition to Spain, including post-Brexit UK-Spain surrender, grounds for refusal, procedimiento de entrega, and impact on parallel proceedings. Written for partners at international law firms.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://murallai.com/guide/uk-spain-extradition/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian: #1A0F0A;
+            --copper: #B87333;
+            --copper-light: #D4944A;
+            --walnut: #4A3228;
+            --ivory: #F5F2EE;
+            --parchment: #E8E0D6;
+            --white: #FFFFFF;
+            --sandstone: #9A8474;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--obsidian);
+            background: var(--white);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            background: var(--obsidian);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--copper);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        nav .back-link {
+            color: var(--parchment);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        nav .back-link:hover { color: var(--copper-light); }
+
+        .breadcrumb {
+            background: var(--ivory);
+            padding: 0.8rem 2rem;
+            font-size: 0.85rem;
+            color: var(--sandstone);
+            border-bottom: 1px solid var(--parchment);
+        }
+
+        .breadcrumb a {
+            color: var(--walnut);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { color: var(--copper); }
+
+        .breadcrumb span { margin: 0 0.4rem; }
+
+        .hero {
+            background: linear-gradient(135deg, var(--obsidian) 0%, var(--walnut) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            font-size: 2.4rem;
+            font-weight: 700;
+            max-width: 820px;
+            margin: 0 auto 1rem;
+            line-height: 1.25;
+        }
+
+        .hero .subtitle {
+            color: var(--copper-light);
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--parchment);
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--sandstone);
+        }
+
+        .tldr {
+            background: var(--ivory);
+            border-left: 4px solid var(--copper);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .tldr strong {
+            color: var(--copper);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--obsidian);
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin: 3rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--walnut);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2rem 0 0.8rem;
+        }
+
+        h4 {
+            font-family: 'Inter', sans-serif;
+            color: var(--walnut);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        p { margin-bottom: 1.2rem; }
+
+        ul, ol {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+        }
+
+        li { margin-bottom: 0.5rem; }
+
+        .legal-term {
+            font-style: italic;
+            color: var(--walnut);
+        }
+
+        .highlight-box {
+            background: var(--ivory);
+            border: 1px solid var(--parchment);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--copper);
+            margin-top: 0;
+        }
+
+        .scenario-box {
+            background: var(--white);
+            border-left: 4px solid var(--copper);
+            border-top: 1px solid var(--parchment);
+            border-right: 1px solid var(--parchment);
+            border-bottom: 1px solid var(--parchment);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .scenario-box h4 {
+            color: var(--copper);
+            margin-top: 0;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        thead th {
+            background: var(--obsidian);
+            color: var(--white);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        tbody td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--parchment);
+        }
+
+        tbody tr:nth-child(even) { background: var(--ivory); }
+
+        .faq-section {
+            background: var(--ivory);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .faq-section h2 { margin-top: 0; }
+
+        .faq-item { margin-bottom: 1.5rem; }
+
+        .faq-item h3 {
+            color: var(--obsidian);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p { margin-bottom: 0; }
+
+        .author-box {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--ivory);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .author-box .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--copper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-box .author-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--obsidian);
+            font-size: 1.05rem;
+        }
+
+        .author-box .author-bio {
+            font-size: 0.9rem;
+            color: var(--sandstone);
+            margin-top: 0.3rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--obsidian) 0%, var(--walnut) 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            color: var(--copper-light);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .cta-box p {
+            color: var(--parchment);
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--copper);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.9rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover { background: var(--copper-light); }
+
+        footer {
+            background: var(--obsidian);
+            color: var(--sandstone);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer .footer-brand {
+            font-family: 'Playfair Display', serif;
+            color: var(--copper);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p { margin-bottom: 0.5rem; }
+
+        footer a {
+            color: var(--copper-light);
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.7rem; }
+            h2 { font-size: 1.4rem; }
+            .container { padding: 2rem 1.2rem; }
+            .cta-box { padding: 2rem 1.5rem; }
+            .author-box { flex-direction: column; align-items: center; text-align: center; }
+            table { font-size: 0.85rem; }
+            thead th, tbody td { padding: 0.5rem; }
+        }
+    </style>
+
+    <!-- BreadcrumbList JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://murallai.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://murallai.com/guide/" },
+            { "@type": "ListItem", "position": 3, "name": "European Arrest Warrant & Extradition to Spain", "item": "https://murallai.com/guide/uk-spain-extradition/" }
+        ]
+    }
+    </script>
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "European Arrest Warrant & Extradition to Spain: What Your Firm Needs to Know",
+        "description": "Comprehensive guide to European Arrest Warrants and extradition to Spain, including post-Brexit UK-Spain surrender, grounds for refusal, and impact on parallel proceedings.",
+        "author": {
+            "@type": "Person",
+            "name": "René Dechamps Otamendi"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Muralla AI",
+            "url": "https://murallai.com"
+        },
+        "datePublished": "2026-05-27",
+        "dateModified": "2026-05-27",
+        "mainEntityOfPage": "https://murallai.com/guide/uk-spain-extradition/"
+    }
+    </script>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does the European Arrest Warrant still apply between the UK and Spain after Brexit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Since the end of the Brexit transition period on 31 December 2020, the European Arrest Warrant (EAW) framework no longer applies between the UK and Spain. Surrender between the two countries is now governed by Part Three, Title VII of the EU-UK Trade and Cooperation Agreement (TCA), which establishes a surrender mechanism closely modeled on the EAW but with key differences, including an expanded double criminality requirement and a nationality exception for the UK."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the main grounds for refusing extradition to Spain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The main grounds for refusal include: lack of double criminality (the conduct must constitute an offence in both jurisdictions, subject to the list of 32 EAW categories), ne bis in idem (the person has already been tried for the same offence), the specialty principle (the person cannot be prosecuted for offences not covered by the warrant), human rights concerns (particularly under Article 6 ECHR regarding prison conditions or fair trial risks), and nationality of the requested person in certain circumstances."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does extradition to Spain typically take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Within the EU under the EAW framework, the executing judicial authority must make a final decision within 60 days of arrest, extendable by 30 days in exceptional circumstances. The requested person must be physically surrendered within 10 days of the final decision. In practice, contested cases frequently take longer. Under the post-Brexit TCA framework between the UK and Spain, timelines are similar but compliance has been variable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can extradition proceedings affect parallel civil or commercial litigation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, significantly. A client who is surrendered to Spain may face restrictions on movement, asset freezes, and practical inability to attend civil proceedings in other jurisdictions. Criminal proceedings in Spain routinely include civil liability claims (responsabilidad civil) within the criminal case itself. International firms must coordinate the criminal extradition defence with any parallel civil or commercial proceedings to protect the client's interests across all fronts."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">MURALLA AI</a>
+        <a href="/" class="back-link">&larr; Back to home</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span>
+        <a href="/guide/">Guides</a> <span>&rsaquo;</span>
+        European Arrest Warrant &amp; Extradition to Spain
+    </div>
+
+    <header class="hero">
+        <h1>European Arrest Warrant &amp; Extradition to Spain: What Your Firm Needs to Know</h1>
+        <p class="subtitle">Navigating cross-border surrender proceedings between the UK, the EU, and Spain</p>
+    </header>
+
+    <main class="container">
+        <div class="meta-bar">
+            <span>Last updated: May 2026</span>
+            <span>Reading time: ~15 min</span>
+            <span>3,000+ words</span>
+        </div>
+
+        <div class="tldr">
+            <strong>TL;DR &mdash;</strong> When Spain issues a European Arrest Warrant (EAW) for a person located in another EU Member State, the surrender process is governed by Council Framework Decision 2002/584/JHA, implemented in Spain by Law 23/2014. Post-Brexit, UK-Spain surrender operates under Part Three, Title VII of the EU-UK Trade and Cooperation Agreement (TCA), which closely mirrors the EAW but introduces key differences including an expanded double criminality check. Grounds for refusal include lack of double criminality, <em>ne bis in idem</em>, the specialty principle, and human rights concerns. International firms must coordinate extradition defence with parallel proceedings and civil liability exposure in Spain.
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2>What Is the European Arrest Warrant and How Does It Work?</h2>
+        <p>The <em class="legal-term">Orden Europea de Detención y Entrega</em> (European Arrest Warrant, or EAW) is the EU's flagship instrument for cross-border surrender of persons for prosecution or execution of a custodial sentence. Established by Council Framework Decision 2002/584/JHA of 13 June 2002, the EAW replaced traditional extradition treaties between EU Member States with a system based on mutual recognition of judicial decisions.</p>
+        <p>The fundamental principle is straightforward: a judicial authority in one Member State (the <em class="legal-term">autoridad judicial emisora</em>, or issuing judicial authority) issues a warrant, and the judicial authority in the Member State where the person is located (the <em class="legal-term">autoridad judicial de ejecución</em>, or executing judicial authority) must execute it, subject to limited grounds for refusal. The EAW eliminated the political discretion that characterized traditional extradition, replacing it with a judicial procedure subject to strict timelines.</p>
+        <p>In Spain, the EAW framework is implemented primarily through <em class="legal-term">Ley 23/2014, de 20 de noviembre, de reconocimiento mutuo de resoluciones penales en la Unión Europea</em> (Law 23/2014 on mutual recognition of criminal judicial decisions in the EU). This law governs both the issuance of EAWs by Spanish courts and the execution of EAWs issued by other Member States.</p>
+
+        <h3>When Does Spain Issue an EAW?</h3>
+        <p>A Spanish court may issue an EAW in two situations: (1) for the purpose of prosecution (<em class="legal-term">para el ejercicio de acciones penales</em>), where the offence carries a maximum sentence of at least 12 months' imprisonment; or (2) for execution of a custodial sentence or detention order (<em class="legal-term">para el cumplimiento de una condena</em>), where the sentence imposed is at least four months.</p>
+        <p>The EAW is issued by the competent judicial authority, typically the <em class="legal-term">juez de instrucción</em> (investigating judge) in the prosecution scenario or the sentencing court in the execution scenario. It must contain specified information including the identity of the requested person, the issuing judicial authority, evidence of the enforceable judgment or arrest warrant, the nature and classification of the offence, the prescribed sentence, and the circumstances in which the offence was committed.</p>
+
+        <!-- SECTION 2 -->
+        <h2>How Does UK-Spain Extradition Work After Brexit?</h2>
+        <p>The withdrawal of the United Kingdom from the European Union on 31 January 2020, followed by the end of the transition period on 31 December 2020, terminated the application of the EAW framework between the UK and EU Member States, including Spain. Surrender between the UK and Spain is now governed by Part Three, Title VII (Surrender) of the <em>EU-UK Trade and Cooperation Agreement</em> (TCA), which entered into provisional application on 1 January 2021.</p>
+        <p>The TCA surrender mechanism was deliberately modeled on the EAW to maintain efficient cross-border surrender. However, several differences are significant for practitioners:</p>
+
+        <div class="highlight-box">
+            <h4>Key Differences Between EAW and TCA Surrender</h4>
+            <ul>
+                <li><strong>Double criminality:</strong> Under the EAW, a list of 32 offence categories is exempt from the double criminality check (i.e., the offence need only be criminal in the issuing state). The TCA retains this list but allows either party to notify that it will apply a double criminality check to all offences regardless. The UK exercised this option, meaning that for surrender from the UK to Spain, the conduct must constitute an offence under English law regardless of the offence category.</li>
+                <li><strong>Nationality exception:</strong> The EAW generally prohibits refusal based on the nationality of the requested person. The TCA, however, allows either party to declare that it will not surrender its own nationals, or will do so only on specified conditions. The UK has declared that it will not refuse surrender solely on nationality grounds, but this asymmetry with some Member States creates strategic considerations.</li>
+                <li><strong>Political offence exception:</strong> The TCA includes a political offence exception, which does not exist under the EAW (save for specific provisions regarding freedom of the press).</li>
+                <li><strong>Proportionality:</strong> UK courts conducting surrender hearings under the Extradition Act 2003 (as amended to implement the TCA) apply proportionality analysis more explicitly than is typical under the EAW within the EU.</li>
+                <li><strong>Human rights bar:</strong> Both systems provide for refusal on human rights grounds, but the UK framework under the Extradition Act 2003 incorporates specific provisions under Sections 21 and 21A relating to compatibility with ECHR rights, including Art. 3 (prohibition of torture) and Art. 6 (right to a fair trial).</li>
+            </ul>
+        </div>
+
+        <p>For international firms advising clients with dual UK-Spain exposure, the post-Brexit framework creates a more complex landscape. Proceedings that under the EAW would have been relatively straightforward may now involve additional litigation over double criminality or proportionality. Conversely, the substantive and procedural protections available in UK surrender hearings can provide legitimate grounds for resisting or delaying surrender that would not exist in an intra-EU EAW context.</p>
+
+        <!-- SECTION 3 -->
+        <h2>What Happens When Spain Issues an EAW Against Your Client?</h2>
+        <p>Understanding the procedural sequence when Spain issues an EAW is essential for early strategic decisions. The process operates simultaneously in Spain and in the executing state.</p>
+
+        <h3>In Spain (Issuing Side)</h3>
+        <ol>
+            <li><strong>Judicial decision to issue:</strong> The competent Spanish judge (typically the <em>juez de instrucción</em> directing the investigation) determines that the requested person is located outside Spain and that an EAW is necessary and proportionate. The judge issues the EAW in the form prescribed by the Framework Decision, with a Spanish-language version and a translation.</li>
+            <li><strong>Transmission:</strong> The EAW is transmitted to the executing judicial authority, either directly (if the person's location is known) or through the <em class="legal-term">Schengen Information System</em> (SIS II) alert mechanism. Spain may also use Interpol channels or the European Judicial Network (EJN).</li>
+            <li><strong>Awaiting execution:</strong> The Spanish court monitors the surrender proceedings in the executing state and responds to any requests for additional information from the executing judicial authority. This phase can involve significant back-and-forth regarding compliance with the formal requirements of the warrant and the availability of guarantees (for example, regarding prison conditions).</li>
+            <li><strong>Surrender and transfer:</strong> Upon the executing authority's decision to surrender, physical transfer is coordinated between the respective authorities. The person must be surrendered within 10 days of the final decision (extendable in specific circumstances).</li>
+        </ol>
+
+        <h3>In the Executing State</h3>
+        <p>The procedure in the executing state varies depending on the jurisdiction, but the general framework mandates:</p>
+        <ul>
+            <li>Arrest of the requested person (either on the basis of a SIS II alert or upon receipt of the EAW)</li>
+            <li>Hearing before the competent judicial authority, with the person having the right to legal representation and, if applicable, interpretation</li>
+            <li>Assessment of mandatory and discretionary grounds for refusal</li>
+            <li>Final decision on surrender within 60 days of arrest (extendable by 30 days in exceptional circumstances)</li>
+            <li>If the person consents to surrender, the decision must be taken within 10 days of consent</li>
+        </ul>
+
+        <!-- SECTION 4 -->
+        <h2>What Are the Grounds for Refusing Extradition to Spain?</h2>
+        <p>The grounds for refusing execution of an EAW are exhaustively defined by the Framework Decision and the implementing national legislation. They are divided into mandatory grounds (the executing authority must refuse) and optional grounds (the executing authority may refuse, depending on national implementing law).</p>
+
+        <h3>Double Criminality</h3>
+        <p>For the 32 categories of offences listed in Art. 2(2) of the Framework Decision (including terrorism, trafficking, fraud, money laundering, corruption, cybercrime, and others), the executing authority must execute the warrant without verifying double criminality, provided the offence carries a maximum sentence of at least three years in the issuing state. For offences outside this list, the executing authority may require that the conduct constitutes an offence under its own law.</p>
+        <p>In practice, double criminality challenges are among the most litigated grounds in extradition proceedings. For Spain-issued warrants, the challenge typically arises when the Spanish offence is defined more broadly than the corresponding offence in the executing state, or where the Spanish offence has no precise equivalent. Tax offences and specific economic crimes are frequent sources of double criminality litigation.</p>
+
+        <h3>Ne Bis in Idem (Double Jeopardy)</h3>
+        <p>Surrender must be refused if the requested person has been finally judged for the same acts by a Member State, provided that the sentence has been served, is currently being served, or can no longer be executed (Art. 3(2) of the Framework Decision). This mandatory ground implements the fundamental principle of <em class="legal-term">ne bis in idem</em>, also enshrined in Art. 50 of the EU Charter of Fundamental Rights.</p>
+        <p>The practical challenge lies in the concept of "same acts" (<em>idem</em>). The Court of Justice of the European Union (CJEU) has interpreted this broadly, focusing on the material facts rather than the legal classification. For clients who have faced regulatory or administrative proceedings in other jurisdictions, the <em>ne bis in idem</em> analysis requires careful assessment of whether the prior proceeding was "criminal" in character for the purposes of the Engel criteria developed by the European Court of Human Rights.</p>
+
+        <h3>Specialty Principle</h3>
+        <p>The <em class="legal-term">principio de especialidad</em> (specialty principle) provides that a person surrendered under an EAW may not be prosecuted, sentenced, or deprived of liberty for offences committed before the surrender other than those for which the surrender was ordered (Art. 27 of the Framework Decision). This is a critical protection: if Spain wishes to prosecute the surrendered person for additional offences, it must obtain supplementary consent from the executing judicial authority or the consent of the person themselves.</p>
+        <p>International firms should monitor compliance with the specialty principle rigorously. In complex multi-count investigations, Spanish authorities occasionally seek to expand the scope of proceedings after surrender. Any prosecution for offences not covered by the original warrant without proper authorization constitutes a violation of the specialty rule and can be challenged both in Spain and before the executing authority.</p>
+
+        <h3>Human Rights Grounds</h3>
+        <p>Although the Framework Decision does not contain an explicit human rights refusal ground (relying instead on the general obligation of Member States to respect fundamental rights), the CJEU has confirmed that execution of an EAW may be refused or postponed where there is a real risk that the surrender would result in a violation of fundamental rights. The two most frequently invoked grounds are:</p>
+        <ul>
+            <li><strong>Article 3 ECHR (prohibition of torture and inhuman or degrading treatment):</strong> Concerns about prison conditions in Spain, particularly regarding overcrowding or conditions in specific facilities, can form the basis of a refusal. The CJEU's ruling in <em>Aranyosi and Caldararu</em> (Joined Cases C-404/15 and C-659/15 PPU) established a two-step test: the executing authority must first identify a systemic or generalized risk, then assess the specific risk to the individual requested person. Spanish authorities have responded to such challenges by providing individualized guarantees regarding the specific facility where the person will be detained.</li>
+            <li><strong>Article 6 ECHR (right to a fair trial):</strong> Challenges based on fair trial concerns are more difficult to sustain given the principle of mutual trust, but they are available in exceptional circumstances. Concerns about the independence of the judiciary, excessively long proceedings, or denial of defence rights can be raised, particularly where specific, concrete evidence supports the claim.</li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2>How Does the Procedimiento de Entrega Work Within Spain?</h2>
+        <p>When Spain is the executing state, receiving an EAW or TCA surrender request from another country, the <em class="legal-term">procedimiento de entrega</em> (surrender procedure) is governed by Law 23/2014 and is handled by the <em class="legal-term">Juzgado Central de Instrucción</em> (Central Investigating Court) of the <em class="legal-term">Audiencia Nacional</em> (National Court) in Madrid.</p>
+        <p>The procedure involves the following steps:</p>
+        <ol>
+            <li><strong>Receipt and verification:</strong> The <em>Juzgado Central de Instrucción</em> receives the EAW, verifies formal compliance, and orders the arrest of the requested person if they are located in Spain.</li>
+            <li><strong>First hearing:</strong> Within 72 hours of arrest, the requested person is brought before the judge, informed of the contents of the EAW, and asked whether they consent to surrender. The person has the right to counsel and, if needed, an interpreter.</li>
+            <li><strong>Consent or opposition:</strong> If the person consents to surrender, the judge may issue the surrender order within 10 days. If the person opposes, the case proceeds to a hearing before the <em class="legal-term">Sala de lo Penal de la Audiencia Nacional</em> (Criminal Chamber of the National Court).</li>
+            <li><strong>Adversarial hearing:</strong> The Criminal Chamber hears arguments from the requested person's counsel, the <em>Ministerio Fiscal</em>, and, where applicable, the issuing authority. The court assesses the grounds for refusal and decides whether to order surrender.</li>
+            <li><strong>Decision:</strong> The court must issue its decision within 60 days of arrest (extendable by 30 days). The decision is subject to <em class="legal-term">recurso de súplica</em> (appeal for reconsideration) but not to ordinary <em>apelación</em>. However, a <em>recurso de amparo</em> before the <em>Tribunal Constitucional</em> is theoretically available for fundamental rights violations.</li>
+            <li><strong>Physical surrender:</strong> If surrender is ordered, the person must be physically transferred within 10 days (extendable in specific circumstances such as humanitarian grounds or force majeure).</li>
+        </ol>
+
+        <!-- SECTION 6 -->
+        <h2>What Happens to Detention During Extradition Proceedings?</h2>
+        <p>The requested person may be detained throughout the surrender proceedings. Under the EAW framework, detention during surrender proceedings is distinct from <em class="legal-term">prisión provisional</em> (pretrial detention) in the underlying criminal case, though the practical effect on the individual is the same: deprivation of liberty.</p>
+        <p>In Spain as executing state, the <em>Juzgado Central de Instrucción</em> may order the detention of the requested person or impose alternative measures such as <em class="legal-term">libertad provisional</em> (conditional release) with conditions. The legal basis is Law 23/2014, supplemented by the general provisions of the LECrim on provisional measures.</p>
+        <p>Critically, the period of detention in the executing state must be deducted from any custodial sentence ultimately imposed in the issuing state. Under Art. 26 of the Framework Decision, the issuing state must deduct all periods of detention arising from the execution of the EAW. International firms should ensure that accurate records of detention periods are maintained and presented to the Spanish court for proper deduction.</p>
+        <p>The maximum duration of detention during surrender proceedings is not explicitly defined by the Framework Decision but is subject to the proportionality principle and the fundamental right to liberty. If the executing authority cannot make a decision within the prescribed time limits, it must consider whether to release the person with conditions. In practice, prolonged detention during surrender proceedings, particularly when the underlying case involves complex legal challenges, can raise serious human rights concerns.</p>
+
+        <!-- SECTION 7 -->
+        <h2>How Do Extradition Proceedings Affect Parallel Civil and Commercial Litigation?</h2>
+        <p>For partners managing cross-border disputes, the intersection between criminal extradition proceedings and parallel civil or commercial litigation is a critical strategic concern. Several dimensions require attention:</p>
+
+        <h3>Asset Freezes and Seizure</h3>
+        <p>Spanish criminal proceedings frequently involve <em class="legal-term">medidas cautelares reales</em> (provisional measures over assets), including freezing orders (<em class="legal-term">embargos</em>) over bank accounts, real estate, and other assets. These measures may be ordered by the <em>juez de instrucción</em> to secure potential civil liability (<em class="legal-term">responsabilidad civil</em>) and the payment of fines. When an EAW is issued, the requesting court may also request asset freezing in the executing state through a <em class="legal-term">European Investigation Order</em> (EIO) or a freezing order under Framework Decision 2003/577/JHA. For clients with assets in multiple jurisdictions, the criminal asset freeze can directly impact commercial operations, banking relationships, and the ability to fund litigation or settlement in civil proceedings.</p>
+
+        <h3>Civil Liability Within Criminal Proceedings</h3>
+        <p>Spanish criminal proceedings routinely include a <em class="legal-term">acción civil</em> (civil action) exercised within the criminal case. The <em>Ministerio Fiscal</em> is obliged to claim civil damages on behalf of the victim unless the victim has expressly reserved their right to pursue civil damages separately (Art. 108 LECrim). The <em>acusación particular</em> will typically also claim damages. This means that the criminal judgment in Spain will include a ruling on civil liability, potentially ordering the defendant to pay compensation, restitution, or indemnification. For firms managing parallel civil litigation in England or elsewhere, this civil ruling within the Spanish criminal case must be anticipated and coordinated.</p>
+
+        <h3>Practical Consequences of Surrender</h3>
+        <p>A client who is surrendered to Spain faces immediate practical consequences for other proceedings: physical inability to attend hearings in other jurisdictions, potential passport confiscation, restrictions on travel and communication, and the reputational impact of arrest and detention. These consequences can undermine the client's position in parallel commercial arbitration, regulatory proceedings, or civil litigation. Early strategic planning, including the potential use of applications for conditional release or time-limited permissions, is essential.</p>
+
+        <!-- SECTION 8 -->
+        <h2>What Scenarios Do International Firms Typically Encounter?</h2>
+        <p>The following scenarios represent common patterns in which international firms encounter Spanish EAW and extradition issues. While each case is unique, these patterns illustrate the typical strategic considerations.</p>
+
+        <div class="scenario-box">
+            <h4>Scenario 1: UK-Based Executive Facing a Spanish Tax Investigation</h4>
+            <p>A British national who served as a director of a Spanish subsidiary is under investigation by a Spanish <em>juez de instrucción</em> for alleged <em class="legal-term">delito fiscal</em> (tax offence) under Art. 305 of the <em>Código Penal</em>. The investigation relates to the company's failure to properly report VAT on intra-group transactions. The executive has not responded to Spanish judicial summonses. The Spanish court issues an EAW through the TCA framework. The firm must advise on the viability of challenging surrender on double criminality grounds (given differences in UK and Spanish tax offence definitions), proportionality, and the potential for negotiating a voluntary appearance in Spain as an alternative to surrender.</p>
+        </div>
+
+        <div class="scenario-box">
+            <h4>Scenario 2: EU National Wanted for Financial Fraud in Spain</h4>
+            <p>A German national residing in the Netherlands is the subject of an EAW issued by a Spanish court in connection with an alleged <em class="legal-term">estafa</em> (fraud) relating to a property development scheme on the Costa del Sol. The requested amount exceeds EUR 2 million, and there are multiple Spanish victims who have constituted themselves as <em>acusación particular</em>. The Dutch executing authority must apply the EAW framework directly. The firm advises on possible grounds for refusal, the specialty principle (as additional offences are being investigated), and coordinating the client's defence in Spain with civil proceedings brought by investors in multiple jurisdictions.</p>
+        </div>
+
+        <div class="scenario-box">
+            <h4>Scenario 3: Spanish National in the UK Subject to a Spanish Domestic Arrest Warrant</h4>
+            <p>A Spanish national who has been living in London is convicted <em>in absentia</em> by a Spanish court and sentenced to four years' imprisonment for <em class="legal-term">blanqueo de capitales</em> (money laundering). Spain issues a TCA surrender request for execution of the sentence. The firm must assess whether the <em>in absentia</em> conviction was conducted with sufficient procedural safeguards (Art. 4a of the Framework Decision, mirrored in the TCA), whether the client was properly notified and represented, and what options exist for challenging the conviction in Spain (including <em class="legal-term">recurso de anulación</em> or requesting a retrial) in parallel with opposing surrender in the UK.</p>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Does the European Arrest Warrant still apply between the UK and Spain after Brexit?</h3>
+                <p>No. Since the end of the Brexit transition period on 31 December 2020, the EAW framework no longer applies between the UK and Spain. Surrender is now governed by Part Three, Title VII of the EU-UK Trade and Cooperation Agreement (TCA), which establishes a surrender mechanism modeled on the EAW but with notable differences, including the UK's option to apply a universal double criminality check and an expanded proportionality analysis.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are the main grounds for refusing extradition to Spain?</h3>
+                <p>The principal grounds include: lack of double criminality (the conduct must constitute an offence in both jurisdictions unless it falls within the 32 listed EAW categories), <em>ne bis in idem</em> (the person has been finally judged for the same acts), the specialty principle (the person cannot be prosecuted for offences not covered by the warrant), and human rights concerns under Articles 3 and 6 of the ECHR. Specific additional grounds apply depending on whether the case involves an intra-EU EAW or a TCA surrender request.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How long does extradition to Spain typically take?</h3>
+                <p>Under the EAW framework, the executing judicial authority must make a final decision within 60 days of arrest, extendable by 30 days in exceptional circumstances. Physical surrender must occur within 10 days of the final decision. Under the TCA, similar timelines apply. In practice, contested cases involving legal challenges, requests for additional information, or human rights arguments frequently exceed these timelines. Cases involving appeals in the executing state can take significantly longer.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can extradition proceedings affect parallel civil or commercial litigation?</h3>
+                <p>Yes, substantially. A surrendered client may face restrictions on movement, asset freezes affecting commercial operations, and practical inability to attend proceedings in other jurisdictions. Spanish criminal proceedings also routinely include civil liability claims within the criminal case itself. International firms must coordinate the criminal extradition defence with parallel civil and commercial matters to protect the client's interests comprehensively.</p>
+            </div>
+        </div>
+
+        <!-- AUTHOR BOX -->
+        <div class="author-box">
+            <div class="author-avatar">RD</div>
+            <div>
+                <div class="author-name">By René Dechamps Otamendi</div>
+                <div class="author-bio">Founder of Muralla AI. 20 years in data and AI. Third-generation legal family.</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h2>Need Help with a Spanish Criminal Case?</h2>
+            <p>Muralla AI provides AI-powered support for international law firms navigating extradition and European Arrest Warrant proceedings involving Spain.</p>
+            <a href="https://murallai.com/#contact" class="cta-button">Schedule a Consultation</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-brand">MURALLA AI</div>
+        <p>AI-powered support for international law firms with Spanish criminal cases.</p>
+        <p>&copy; 2026 Muralla AI. All rights reserved. <a href="https://murallai.com">murallai.com</a></p>
+    </footer>
+</body>
+</html>
