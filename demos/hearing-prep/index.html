@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Powered Hearing Preparation Simulator | Alc&aacute;zar AI &mdash; Cross-Examination Prep</title>
+<meta name="description" content="Anticipate prosecution questions, detect traps, and prepare cross-examination with artificial intelligence. Alc&aacute;zar AI demo.">
+<link rel="canonical" href="https://murallaai.com/demos/hearing-prep">
+<meta name="hreflang" content="en">
+<meta property="og:title" content="AI-Powered Hearing Preparation Simulator | Alc&aacute;zar AI &mdash; Cross-Examination Prep">
+<meta property="og:description" content="Anticipate prosecution questions, detect traps, and prepare cross-examination with artificial intelligence. Alc&aacute;zar AI demo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murallaai.com/demos/hearing-prep">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alc&aacute;zar AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Muralla AI", "item": "https://murallaai.com/"},
+    {"@type": "ListItem", "position": 2, "name": "AI-Powered Hearing Preparation Simulator", "item": "https://murallaai.com/demos/hearing-prep"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1A0F0A;--gold:#B87333;--gold-light:#D4956A;--white:#FAFAF8;--bg:#F4F1EB;--text:#2C2C2C;--muted:#6B6B6B;--green:#2D8A5E;--red:#C0392B;--amber:#D4881C;--blue:#2E75B6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.top-bar{background:var(--navy);padding:12px 0;text-align:center}
+.top-bar a{color:var(--gold);font-family:'Playfair Display',serif;font-size:18px;text-decoration:none;font-weight:600;letter-spacing:1px}
+.demo-banner{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);text-align:center;padding:10px;font-size:12px;font-weight:500;letter-spacing:.5px}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#2D1F16 100%);padding:40px 24px 32px;text-align:center}
+.hero h1{font-family:'Playfair Display',serif;color:var(--white);font-size:32px;font-weight:600;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,.6);font-size:14px}
+.container{max-width:960px;margin:0 auto;padding:24px}
+.profile-card{background:var(--white);border-radius:10px;padding:24px;margin-bottom:24px;border:1px solid rgba(0,0,0,.06);display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:28px;font-weight:600}
+.profile-info h3{font-size:18px;color:var(--navy);margin-bottom:2px}
+.profile-info .role{font-size:13px;color:var(--muted)}
+.profile-info .tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.profile-tag{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(26,15,10,.06);color:var(--navy);font-weight:500}
+.profile-stats{text-align:right}
+.profile-stats div{margin-bottom:4px}
+.profile-stats .ps-val{font-size:18px;font-weight:600;color:var(--navy)}
+.profile-stats .ps-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:2px solid rgba(0,0,0,.06);padding-bottom:0}
+.tab{padding:10px 18px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:none;color:var(--muted);font-family:'Inter',sans-serif;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .3s}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.tab:hover{color:var(--navy)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.question-card{background:var(--white);border-radius:8px;padding:18px;margin-bottom:10px;border:1px solid rgba(0,0,0,.06);cursor:pointer;transition:all .3s}
+.question-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.question-card.expanded{border-color:var(--gold)}
+.q-header{display:flex;justify-content:space-between;align-items:center}
+.q-number{font-size:11px;color:var(--gold);font-weight:600;margin-bottom:4px}
+.q-text{font-size:14px;font-weight:500;color:var(--navy)}
+.q-risk{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;white-space:nowrap}
+.risk-high{background:#FDEDED;color:var(--red)}
+.risk-medium{background:#FFF3E0;color:var(--amber)}
+.risk-low{background:#E8F5E9;color:var(--green)}
+.q-answer{margin-top:14px;padding-top:14px;border-top:1px solid rgba(0,0,0,.06);display:none;animation:fadeIn .3s ease}
+.question-card.expanded .q-answer{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.strategy-box{background:rgba(45,138,94,.06);border-radius:6px;padding:12px;margin-bottom:8px;border-left:3px solid var(--green)}
+.strategy-box h5{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--green);margin-bottom:6px}
+.strategy-box p{font-size:13px;color:var(--text)}
+.trap-box{background:rgba(192,57,43,.06);border-radius:6px;padding:12px;border-left:3px solid var(--red)}
+.trap-box h5{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--red);margin-bottom:6px}
+.trap-box p{font-size:13px;color:var(--text)}
+.counter-card{background:var(--white);border-radius:8px;padding:18px;margin-bottom:10px;border:1px solid rgba(0,0,0,.06)}
+.counter-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.counter-num{width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.counter-title{font-size:14px;font-weight:500;color:var(--navy)}
+.counter-body{font-size:13px;color:var(--text);padding-left:36px}
+.counter-body .cite{font-size:12px;color:var(--blue);margin-top:6px;font-style:italic}
+.trap-main{background:var(--white);border-radius:8px;padding:18px;margin-bottom:10px;border-left:4px solid var(--red);border-right:1px solid rgba(0,0,0,.06);border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)}
+.trap-title{font-size:14px;font-weight:600;color:var(--red);margin-bottom:6px}
+.trap-desc{font-size:13px;color:var(--text);margin-bottom:8px}
+.trap-defense{font-size:12px;color:var(--green);background:rgba(45,138,94,.06);padding:8px 12px;border-radius:6px}
+.trap-defense strong{color:var(--green)}
+.section-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.prep-card{background:var(--white);border-radius:8px;padding:16px;border:1px solid rgba(0,0,0,.06)}
+.prep-card h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.prep-card ul{list-style:none;padding:0}
+.prep-card li{font-size:12px;color:var(--text);padding:4px 0;padding-left:16px;position:relative}
+.prep-card li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+footer{text-align:center;padding:32px 24px;color:var(--muted);font-size:12px}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:600px){.profile-card{grid-template-columns:1fr}.profile-stats{text-align:left;display:flex;gap:16px}.prep-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-banner">INTERACTIVE DEMO &mdash; Fictitious case generated for illustrative purposes</div>
+<nav style="padding:8px 24px;font-size:13px;background:var(--bg);border-bottom:1px solid rgba(0,0,0,.06)" aria-label="Breadcrumb"><a href="https://murallaai.com" style="color:var(--gold);text-decoration:none">&larr; Back to Alc&aacute;zar AI</a></nav>
+<div class="top-bar"><a href="https://murallaai.com">ALC&Aacute;ZAR AI</a></div>
+<div class="hero">
+<h1>Vista Oral &mdash; Preparation Simulator</h1>
+<p>Anticipate Fiscal&iacute;a (Public Prosecution) questions, prepare defense strategies, and avoid traps</p>
+</div>
+<div class="container">
+<div class="profile-card">
+<div class="avatar">CN</div>
+<div class="profile-info">
+<h3>Carlos Navarro Mendoza</h3>
+<div class="role">CFO &mdash; Grupo Meridiano S.L. &bull; Acusado (defendant)</div>
+<div class="tags">
+<span class="profile-tag">Fraude fiscal art. 305.1 bis</span>
+<span class="profile-tag">Falsedad documental art. 392</span>
+<span class="profile-tag">Case No. 15/2025</span>
+</div>
+</div>
+<div class="profile-stats">
+<div><span class="ps-val">12</span><br><span class="ps-lbl">Anticipated questions</span></div>
+<div><span class="ps-val">5</span><br><span class="ps-lbl">Traps detected</span></div>
+</div>
+</div>
+<div class="tabs">
+<button class="tab active" onclick="showTab('questions',this)">Preguntas Fiscal&iacute;a</button>
+<button class="tab" onclick="showTab('cross',this)">Contrainterrogatorio</button>
+<button class="tab" onclick="showTab('traps',this)">Trampas</button>
+<button class="tab" onclick="showTab('prep',this)">Preparaci&oacute;n</button>
+</div>
+<div class="tab-content active" id="tab-questions"></div>
+<div class="tab-content" id="tab-cross"></div>
+<div class="tab-content" id="tab-traps"></div>
+<div class="tab-content" id="tab-prep">
+<div class="section-title">Gu&iacute;a de preparaci&oacute;n</div>
+<div class="prep-grid">
+<div class="prep-card">
+<h4>Antes de la vista oral</h4>
+<ul>
+<li>Review the 2018&ndash;2022 transaction timeline with the client</li>
+<li>Prepare short, direct answers for all 12 questions</li>
+<li>Practice emotional control when facing provocative questions</li>
+<li>Review accounting documentation submitted as prueba documental</li>
+<li>Confirm technical invoicing points with the perito (expert witness)</li>
+</ul>
+</div>
+<div class="prep-card">
+<h4>During the interrogatorio</h4>
+<ul>
+<li>Keep answers brief: yes/no plus one explanatory sentence at most</li>
+<li>Do not guess exact figures &mdash; &ldquo;I don&rsquo;t recall precisely&rdquo;</li>
+<li>Never contradict statements given during the fase de instrucci&oacute;n (investigation phase)</li>
+<li>Avoid making legal or technical accounting assessments</li>
+<li>Look at the Sala, not the Fiscal, when answering</li>
+</ul>
+</div>
+<div class="prep-card">
+<h4>Frases de seguridad</h4>
+<ul>
+<li>&ldquo;Me acojo a mi derecho a no contestar sobre ese punto&rdquo;</li>
+<li>&ldquo;Eso excede mis funciones como Director Financiero&rdquo;</li>
+<li>&ldquo;Necesitar&iacute;a consultar la documentaci&oacute;n para ser preciso&rdquo;</li>
+<li>&ldquo;Esa cuesti&oacute;n ya fue abordada en mi declaraci&oacute;n en instrucci&oacute;n&rdquo;</li>
+</ul>
+</div>
+<div class="prep-card">
+<h4>Se&ntilde;ales de alerta</h4>
+<ul>
+<li>Fiscal repeats the same question with different wording</li>
+<li>Questions about personal relationships with the CEO</li>
+<li>References to documents not included in the sumario</li>
+<li>Fiscal cites coacusado statements out of context</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer><a href="https://murallaai.com">Alc&aacute;zar AI</a> &mdash; Artificial Intelligence for Criminal Defense<br>Alc&aacute;zar AI &mdash; Demo</footer>
+<script>
+const preguntas=[
+{num:1,text:"Were you aware that the invoices issued by Servicios Levante S.L. did not correspond to services actually rendered?",risk:"high",strategy:"Deny direct knowledge. Point out that vendor validation was the responsibility of the procurement department, not the CFO. Rely on the company’s organigrama funcional.",trap:"The Fiscal&iacute;a will try to establish direct knowledge of the falsedad documental. Do not admit to having seen or reviewed individual invoices from that vendor.",cite:"STS 345/2022: 'The mere position of CFO does not imply knowledge of each individual transaction'"},
+{num:2,text:"Who authorized payments to the vendors now identified as sociedades instrumentales (shell companies)?",risk:"high",strategy:"Describe the formal approval process: purchase order → departmental validation → conformidad contable → payment. Emphasize that the chain had multiple control points.",trap:"The Fiscal seeks to have you identify the CEO as an accomplice or assume sole responsibility. Keep the answer focused on the process, not individuals.",cite:"Art. 31 bis CP: responsabilidad penal de la persona jur&iacute;dica"},
+{num:3,text:"Can you explain why the accounts reflect €2.3M in consulting services with no documented deliverables?",risk:"high",strategy:"Point out that consulting services do not always generate tangible deliverables (verbal advice, market analysis). Indicate that supporting documentation was held by the department that contracted the service.",trap:"The Fiscal wants you to admit there was no real contraprestaci&oacute;n. Do not assess whether the services were real or not — that is a matter for prueba pericial (expert testimony).",cite:"Informe pericial contable: the amounts are within market range for services of that nature"},
+{num:4,text:"Did you maintain direct communication with the administradores of the sociedades instrumentales?",risk:"medium",strategy:"Deny direct communication. The CFO communicates with internal departments, not directly with vendors. If emails exist, contextualize them as standard operational correspondence.",trap:"Any direct contact will be used to argue connivencia. If communications existed, they were purely administrative.",cite:""},
+{num:5,text:"Why did you not alert the consejo de administraci&oacute;n (board of directors) about the accounting irregularities now under investigation?",risk:"high",strategy:"Reject the premise. At the time of the events, there were no apparent ‘irregularities’ — the cuentas anuales were audited and approved. The classification as irregular is retroactive.",trap:"Classic pregunta-trampa: it assumes you knew there were irregularities. Never accept the implicit premise.",cite:"STS 678/2021: ‘One cannot be required to report facts that are only retrospectively classified as criminal’"},
+{num:6,text:"Did you receive any personal benefit, direct or indirect, from the transactions under investigation?",risk:"medium",strategy:"Firm denial. The acusado’s salary and bonus were set by contract and approved by the consejo. There was no variable compensation linked to the investigated vendors.",trap:"The Fiscal seeks personal profit motive to aggravate charges. If there were performance bonuses, disconnect them entirely from the investigated transactions.",cite:"Art. 305 CP: the tax benefit accrues to the persona jur&iacute;dica, not the CFO"},
+{num:7,text:"Did you personally oversee the declaraciones tributarias (tax returns) for the ejercicios 2019 to 2022?",risk:"medium",strategy:"Distinguish between general oversight (yes, as CFO) and individual preparation/verification (no, that was handled by the tax department with an external asesor fiscal). Emphasize delegation with oversight.",trap:"If you say you did oversee them, you bear direct responsibility. If you say you didn't, you were negligent. The answer is: oversight of the general framework, not of every line item.",cite:""},
+{num:8,text:"Were you aware of the verbal agreement between the CEO and the administradores of Servicios Levante?",risk:"high",strategy:"Deny any knowledge of verbal agreements. Vendor agreements were formalized in writing through the asesor&iacute;a jur&iacute;dica. If the CEO had private arrangements, the CFO had no reason to know about them.",trap:"The Fiscal is trying to link the investigado to the CEO’s scheme. Maintain clear distance: differentiated roles and functional compartments.",cite:"STS 234/2023: ‘Participation in a crime requires actual knowledge, not merely positional knowledge’"},
+{num:9,text:"How do you explain that your signature appears on three of the contested invoices?",risk:"medium",strategy:"Explain that the CFO’s signature on invoices was a conformidad contable formality (confirming amounts matched the budget), not a certification that the service was actually rendered. Distinguish ‘conformidad contable’ from ‘conformidad material’.",trap:"The physical signature is the most direct evidence of involvement. But signing conformidad contable ≠ knowledge of the falsedad.",cite:"AP Madrid, Secci&oacute;n 23: ‘A budgetary conformity signature does not amount to participation in falsedad material’"},
+{num:10,text:"Can you explain the €450,000 in transfers to the account in Portugal?",risk:"low",strategy:"Refer to the documentaci&oacute;n bancaria already submitted. The transfers corresponded to payments for international consulting services, with applicable retenci&oacute;n fiscal and reported on Modelo 349.",trap:"The Fiscal wants you to improvise explanations about complex banking transactions. Never give figures from memory — always refer to the documentation.",cite:""},
+{num:11,text:"The perito de la acusaci&oacute;n (prosecution expert) states that the invoices show numbering patterns inconsistent with genuine business activity. What is your opinion?",risk:"low",strategy:"Do not enter into an expert debate. Point out that the defense has submitted a contra-informe pericial rebutting that conclusion. The acusado is not an expert in invoice numbering patterns.",trap:"The Fiscal wants the acusado to act as a perito and venture into technical territory where contradictions may arise. Always defer to the perito de la defensa.",cite:"Art. 723 LECrim: la valoraci&oacute;n pericial corresponde al tribunal"},
+{num:12,text:"If everything was above board, why has the CEO entered a conformidad (plea agreement) with the Fiscal&iacute;a?",risk:"medium",strategy:"The CEO’s conformidad is a personal procedural decision that does not imply guilt of third parties. Each acusado has the right to their own defense strategy. The conformidad may have been motivated by personal, financial, or procedural convenience reasons.",trap:"The CEO’s conformidad is the Ministerio Fiscal’s most powerful weapon. Do not allow it to be interpreted as a collective admission of guilt.",cite:"STS 123/2024: ‘A co-defendant’s conformidad cannot be treated as evidence against the remaining defendants’"}
+];
+const contraLines=[
+{num:1,title:"Delegaci&oacute;n funcional documentada",body:"Request the Sala to exhibit the company's manual de funciones. The CFO had authority over financial reporting and treasury, but not over vendor procurement or validation of services received.",cite:"Art. 31 bis.2 CP: programas de cumplimiento eximen de responsabilidad si son eficaces"},
+{num:2,title:"Auditor&iacute;as externas limpias",body:"In the ejercicios 2019–2022, the external auditor (a Big Four firm) issued informes sin salvedades. If specialized professionals did not detect irregularities, the CFO cannot be held to a higher standard of diligence.",cite:"STS 567/2022: 'The absence of salvedades in an external audit indicates an appearance of regularity'"},
+{num:3,title:"Conformidad del CEO como prueba exculpatoria",body:"The CEO entered a conformidad accepting he was the mastermind of the scheme. His declaraci&oacute;n en fase de instrucci&oacute;n (folio 234) expressly states that 'the CFO did not participate in the selection or negotiation with the investigated vendors'.",cite:"Art. 714 LECrim: declaraciones en instrucci&oacute;n vs. declaraciones en juicio oral"},
+{num:4,title:"Ausencia de beneficio personal",body:"Request certificaci&oacute;n de n&oacute;mina y bonus: the acusado's compensation was fixed + variable linked to overall EBITDA, with no component tied to tax reduction or to transactions with the investigated vendors.",cite:""},
+{num:5,title:"Asesor&iacute;a fiscal externa",body:"The declaraciones tributarias were prepared by an external asesor&iacute;a fiscal (Garrigues Tax). The CFO only signed as representante legal. Call the firm's responsable fiscal as a testigo.",cite:"Contrato de servicios fiscales obrante al folio 456"},
+{num:6,title:"Error de tipo invencible",body:"If the acusado was unaware of the instrumental nature of the vendor companies — and the prueba documental does not establish otherwise — we are dealing with an error de tipo under art. 14.1 CP that excludes dolo (intentional liability).",cite:"Art. 14.1 CP: el error sobre un elemento del tipo excluye la responsabilidad dolosa"}
+];
+const trampas=[
+{title:"Pregunta de culpabilidad asumida",desc:"'When did you realize the invoices were forged?' — This presupposes the acusado knew they were forged. The correct question would be whether he knew, not when he found out.",defense:"Recommended answer: 'No acepto la premisa de su pregunta. En ning&uacute;n momento he tenido conocimiento de que las facturas fueran falsas.'"},
+{title:"Cita selectiva de declaraciones",desc:"'But you stated during instrucci&oacute;n that you oversaw all accounting...' — A partial quote that omits context ('overseeing the general framework' ≠ 'reviewing every entry').",defense:"Recommended answer: 'Le ruego que lea mi declaraci&oacute;n completa. Dije que supervisaba el marco contable general, que es distinto a lo que usted sugiere.'"},
+{title:"Falso dilema CEO/CFO",desc:"'If it wasn't you who authorized these transactions, are you saying the CEO acted alone?' — This attempts to force a cross-accusation or an admission of coautor&iacute;a.",defense:"Recommended answer: 'No me corresponde atribuir responsabilidades a terceros. Solo puedo declarar sobre mis propias funciones y conocimientos.'"},
+{title:"Apelaci&oacute;n a la evidencia",desc:"'As a CFO with 15 years of experience, do you really claim you saw nothing irregular in €2.3 million worth of invoices?' — Uses professional experience as proof of knowledge.",defense:"Recommended answer: 'Mi experiencia me permite supervisar marcos generales. Ni siquiera los auditores externos detectaron irregularidades, lo que demuestra que no eran evidentes.'"},
+{title:"La trampa de la cifra exacta",desc:"'How much exactly was paid to Servicios Levante in 2021?' — The Fiscal wants you to improvise a figure that may contradict the documents. If you get it right, 'you knew the details'; if you get it wrong, 'you're lying'.",defense:"Recommended answer: 'No tengo esa cifra de memoria. Los importes exactos constan en los registros contables obrantes en autos.'"}
+];
+const pregContainer=document.getElementById('tab-questions');
+preguntas.forEach(p=>{
+const riskClass=p.risk==='high'?'risk-high':p.risk==='medium'?'risk-medium':'risk-low';
+const riskLabel=p.risk==='high'?'Riesgo alto':p.risk==='medium'?'Riesgo medio':'Riesgo bajo';
+pregContainer.innerHTML+=`
+<div class="question-card" onclick="this.classList.toggle('expanded')">
+<div class="q-header"><div><div class="q-number">PREGUNTA ${p.num}</div><div class="q-text">${p.text}</div></div><span class="q-risk ${riskClass}">${riskLabel}</span></div>
+<div class="q-answer">
+<div class="strategy-box"><h5>Estrategia de respuesta</h5><p>${p.strategy}</p></div>
+<div class="trap-box"><h5>Intenci&oacute;n del Fiscal</h5><p>${p.trap}</p></div>
+${p.cite?`<div style="font-size:12px;color:var(--blue);margin-top:8px;font-style:italic">${p.cite}</div>`:''}
+</div>
+</div>`;
+});
+const contraContainer=document.getElementById('tab-cross');
+contraContainer.innerHTML='<div class="section-title">L&iacute;neas de contrainterrogatorio</div><p style="font-size:13px;color:var(--muted);margin-bottom:20px">Arguments for the letrado de la defensa (defense counsel) when questioning Fiscal&iacute;a witnesses and peritos</p>';
+contraLines.forEach(c=>{
+contraContainer.innerHTML+=`
+<div class="counter-card">
+<div class="counter-header"><div class="counter-num">${c.num}</div><div class="counter-title">${c.title}</div></div>
+<div class="counter-body">${c.body}${c.cite?`<div class="cite">${c.cite}</div>`:''}</div>
+</div>`;
+});
+const trapContainer=document.getElementById('tab-traps');
+trapContainer.innerHTML='<div class="section-title">Trampas habituales del Fiscal</div><p style="font-size:13px;color:var(--muted);margin-bottom:20px">Question patterns designed to elicit involuntary admissions</p>';
+trampas.forEach(t=>{
+trapContainer.innerHTML+=`
+<div class="trap-main">
+<div class="trap-title">${t.title}</div>
+<div class="trap-desc">${t.desc}</div>
+<div class="trap-defense"><strong>Defensa recomendada:</strong> ${t.defense}</div>
+</div>`;
+});
+function showTab(id,btn){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('tab-'+id).classList.add('active');
+}
+</script>
+</body>
+</html>

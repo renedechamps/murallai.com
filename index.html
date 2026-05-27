@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muralla AI — AI-Powered Support for International Law Firms with Spanish Criminal Cases</title>
+<meta name="description" content="Your AI partner for Spanish criminal proceedings. Case file analysis, procedural drafts, deadline monitoring and defence strategy — built for international law firms handling cases in Spain.">
+<meta name="keywords" content="Spanish criminal law AI, international law firm Spain support, AI criminal defence Spain, Spanish proceedings support, cross-border criminal cases Spain, LECrim AI analysis, Spanish court deadlines, Madrid criminal law, Iberian jurisdiction AI, legaltech Spain international">
+<meta name="theme-color" content="#1A0F0A">
+<link rel="canonical" href="https://murallaai.com/">
+<meta property="og:title" content="Muralla AI — AI partner for international firms with Spanish criminal cases">
+<meta property="og:description" content="Case file analysis, procedural drafts, deadline monitoring and defence strategy. Built for international law firms handling criminal proceedings in Spain.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murallaai.com/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Muralla AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Muralla AI — AI partner for international firms with Spanish criminal cases">
+<meta name="twitter:description" content="Case file analysis, procedural drafts, deadline monitoring and defence strategy for international law firms handling cases in Spain.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Muralla AI",
+  "description": "AI-powered support for international law firms handling criminal proceedings in Spain. Case file analysis, procedural drafts, deadline monitoring and defence strategy.",
+  "url": "https://murallaai.com/",
+  "provider": {
+    "@type": "Person",
+    "name": "René Dechamps Otamendi"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressRegion": "Community of Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    {"@type": "Country", "name": "United Kingdom"},
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "Germany"},
+    {"@type": "Country", "name": "France"},
+    {"@type": "Country", "name": "Spain"}
+  ],
+  "serviceType": ["AI criminal defence support Spain", "Spanish case file analysis", "Cross-border criminal case management", "Spanish procedural drafting", "Criminal deadline monitoring Spain"],
+  "priceRange": "€5,000 – €12,000/engagement"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Muralla AI do for international law firms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muralla AI provides AI-powered support for international law firms handling criminal proceedings in Spain. We analyse case files, draft procedural documents under Spanish criminal law (LECrim), monitor court deadlines, and prepare defence strategies — all delivered in English with full bilingual documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is client data protected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All data is processed locally on a dedicated machine assigned exclusively to your case. No data is sent to cloud APIs, OpenAI, or any third-party provider. Each engagement includes a case-specific NDA, AES-256 encryption, and full GDPR compliance. Your case file never leaves the dedicated hardware."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Muralla AI replace local Spanish counsel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Muralla AI works alongside your local Spanish counsel or as a standalone analytical layer. All deliverables — case analysis, draft submissions, strategy documents — are reviewed before delivery. The supervising attorney maintains full control over the defence strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of Spanish criminal cases do you handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialise in complex cases: multi-defendant proceedings (macrocausas), economic crimes, money laundering, fraud, corruption, European Arrest Warrants, extraditions, and cases involving foreign nationals or multinational corporations with exposure in Spanish courts."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#1A0F0A;--mahogany:#2C1810;--walnut:#4A3228;--bronze:#6B4D3A;
+  --sandstone:#9A8474;--limestone:#C4B5A6;--parchment:#E8E0D6;--ivory:#F5F2EE;--white:#FFFFFF;
+  --copper:#B87333;--copper-light:#D4944A;--copper-bg:rgba(184,115,51,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--obsidian);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,serif}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s ease}
+.nav.scrolled{background:rgba(26,15,10,0.96);backdrop-filter:blur(12px);padding:14px 40px;border-bottom:1px solid rgba(184,115,51,0.1)}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;color:var(--white);letter-spacing:2px;text-decoration:none}
+.nav-logo span{font-weight:300;opacity:0.6;margin-left:6px}
+.nav-cta{font-family:'Playfair Display',Georgia,serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--copper);text-decoration:none;padding:8px 20px;border:1px solid rgba(184,115,51,0.4);border-radius:3px;transition:all 0.3s ease}
+.nav-cta:hover{background:rgba(184,115,51,0.1);border-color:var(--copper)}
+
+/* HERO */
+.hero{background:var(--obsidian);color:var(--white);min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(184,115,51,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:760px;padding:2rem;position:relative;z-index:1}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);border:1px solid rgba(184,115,51,0.3);padding:6px 16px;border-radius:3px;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,54px);font-weight:500;line-height:1.2;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--copper)}
+.hero .sub{font-size:clamp(15px,2vw,17px);color:var(--limestone);line-height:1.8;margin-bottom:2.5rem;max-width:580px;margin-left:auto;margin-right:auto;font-weight:300}
+.cta-btn{display:inline-block;font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--obsidian);background:linear-gradient(135deg,var(--copper-light),var(--copper));padding:16px 40px;border-radius:4px;text-decoration:none;transition:all 0.3s ease}
+.cta-btn:hover{transform:translateY(-1px);background:linear-gradient(135deg,var(--copper),#C9884A)}
+.hero-note{font-size:13px;color:var(--sandstone);margin-top:1.5rem}
+
+/* SECTIONS */
+.section{max-width:880px;margin:0 auto;padding:4rem 2rem}
+.section-label{font-family:'Playfair Display',Georgia,serif;font-size:12px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--copper);margin-bottom:8px}
+.section h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,4vw,36px);font-weight:500;color:var(--obsidian);margin-bottom:1rem;line-height:1.25}
+.section p{font-size:15px;color:var(--walnut);line-height:1.8;margin-bottom:1rem;max-width:660px}
+.divider{border:none;border-top:1px solid var(--parchment);margin:0}
+
+/* BIO */
+.bio{background:var(--ivory);padding:3.5rem 2rem}
+.bio-inner{max-width:700px;margin:0 auto;text-align:center}
+.bio h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:500;color:var(--obsidian);margin-bottom:4px}
+.bio .bio-title{font-size:13px;color:var(--copper);letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem}
+.bio p{font-size:15px;color:var(--walnut);line-height:1.8;margin-bottom:1rem;max-width:640px;margin-left:auto;margin-right:auto}
+.bio .highlight{font-family:'Playfair Display',Georgia,serif;font-size:17px;font-style:italic;color:var(--mahogany);line-height:1.6}
+
+/* CREDENTIALS */
+.credentials{display:flex;justify-content:center;gap:32px;margin-top:2rem;flex-wrap:wrap}
+.credential{font-size:12px;color:var(--sandstone);display:flex;align-items:center;gap:8px;letter-spacing:0.3px}
+.credential::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--copper);flex-shrink:0}
+
+/* PROCESS */
+.proceso-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:1.5rem 0}
+.proceso-step{padding:1.25rem;background:var(--ivory);border-radius:8px}
+.proceso-num{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:600;color:var(--copper);margin-bottom:8px}
+.proceso-step h3{font-family:'Playfair Display',Georgia,serif;font-size:17px;font-weight:500;color:var(--obsidian);margin-bottom:6px}
+.proceso-step p{font-size:13px;color:var(--walnut);line-height:1.7}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:1.5rem 0}
+.service{padding:1.25rem 1.5rem;border:1px solid var(--parchment);border-radius:8px;transition:border-color 0.3s ease}
+.service:hover{border-color:rgba(184,115,51,0.4)}
+.service h3{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:500;margin-bottom:8px;color:var(--obsidian)}
+.service p{font-size:14px;color:var(--walnut);line-height:1.7}
+.demo-link{display:inline-block;margin-top:10px;font-family:'Playfair Display',Georgia,serif;font-size:13px;font-weight:500;color:var(--copper);text-decoration:none;letter-spacing:1px;transition:color 0.3s}
+.demo-link:hover{color:var(--copper-light)}
+.demo-link::after{content:' \2192';transition:transform 0.3s}
+
+/* CASES */
+.cases-section{background:var(--obsidian);padding:4rem 2rem;color:var(--white)}
+.cases-inner{max-width:880px;margin:0 auto}
+.cases-section .section-label{color:var(--copper)}
+.cases-section h2{color:var(--white)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:1.5rem}
+.case-card{border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:1.5rem;position:relative;overflow:hidden}
+.case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--copper),transparent)}
+.case-type{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
+.case-card h3{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:500;margin-bottom:8px}
+.case-card p{font-size:13px;color:var(--limestone);line-height:1.7}
+
+/* SECURITY */
+.security{background:var(--ivory);padding:3.5rem 2rem}
+.security-inner{max-width:700px;margin:0 auto;text-align:center}
+.security h2{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:500;color:var(--obsidian);margin-bottom:1rem}
+.security p{font-size:15px;color:var(--walnut);line-height:1.8;margin-bottom:0.5rem;max-width:640px;margin-left:auto;margin-right:auto}
+.sec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:2rem}
+.sec-item{text-align:center;padding:1rem;background:var(--white);border-radius:8px;border:1px solid var(--parchment)}
+.sec-item .sec-label{font-size:12px;color:var(--walnut);margin-top:6px;line-height:1.4}
+.sec-item .sec-icon{font-family:'Playfair Display',Georgia,serif;font-size:20px;color:var(--copper);font-weight:500}
+
+/* PRICING */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.5rem 0}
+.price-card{border:1px solid var(--parchment);border-radius:8px;padding:1.5rem;position:relative;transition:border-color 0.3s}
+.price-card:hover{border-color:rgba(184,115,51,0.3)}
+.price-card.featured{border:2px solid var(--copper)}
+.price-card.featured::before{content:'Most requested';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--copper);color:var(--white);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 14px;border-radius:3px;font-weight:500;white-space:nowrap}
+.price-tier{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sandstone);margin-bottom:12px}
+.price-amount{font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:600;color:var(--obsidian)}
+.price-amount span{font-size:15px;font-weight:400;color:var(--sandstone)}
+.price-note{font-size:12px;color:var(--sandstone);margin-bottom:16px}
+.price-includes{border-top:1px solid var(--parchment);padding-top:14px}
+.price-includes p{font-size:13px;color:var(--walnut);padding-left:16px;position:relative;margin-bottom:6px;line-height:1.5}
+.price-includes p::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--copper)}
+
+/* FAQ */
+.faq{max-width:880px;margin:0 auto;padding:4rem 2rem}
+.faq-item{border-bottom:1px solid var(--parchment);padding:1rem 0}
+.faq-q{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:500;color:var(--obsidian);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';color:var(--copper);font-size:24px;transition:transform 0.3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;font-size:15px;color:var(--walnut);line-height:1.8}
+.faq-item.open .faq-a{max-height:400px;padding-top:12px}
+
+/* CTA FINAL */
+.cta-final{background:var(--obsidian);padding:4rem 2rem;text-align:center;color:var(--white);position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(184,115,51,0.04) 0%,transparent 50%)}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.cta-final h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,4vw,34px);font-weight:500;margin-bottom:1.5rem;line-height:1.3}
+.cta-final p{font-size:15px;color:var(--limestone);line-height:1.8;margin-bottom:2rem}
+.cta-final .fine{font-size:13px;color:var(--sandstone);margin-top:1.5rem}
+
+/* FOOTER */
+.footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--parchment)}
+.footer-logo{font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:500;color:var(--sandstone);letter-spacing:2px;margin-bottom:1rem}
+.footer p{font-size:12px;color:var(--sandstone);letter-spacing:0.5px}
+.footer a{color:var(--bronze);text-decoration:none}
+.footer a:hover{color:var(--copper)}
+.footer .tagline{font-family:'Playfair Display',Georgia,serif;font-size:14px;font-style:italic;color:var(--bronze);margin-top:12px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:14px 20px}
+  .services,.case-grid,.pricing,.proceso-grid,.sec-grid{grid-template-columns:1fr}
+  .credentials{flex-direction:column;align-items:center;gap:8px}
+  .hero-inner{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">ALC&Aacute;ZAR<span>AI</span></a>
+  <a href="#contact" class="nav-cta">Schedule a call</a>
+</nav>
+
+<!-- HERO -->
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">For international law firms</div>
+    <h1>Your Spanish criminal case.<br><em>Our AI fortress.</em></h1>
+    <p class="sub">We analyse your Spanish case file, draft procedural documents, monitor court deadlines, and prepare defence strategy &mdash; all processed locally, all delivered in English. First deliverable in 48 hours.</p>
+    <a href="#contact" class="cta-btn">Schedule a consultation</a>
+    <p class="hero-note">We take a maximum of 8 concurrent engagements to ensure dedicated attention.</p>
+  </div>
+</section>
+
+<!-- BIO -->
+<div class="bio">
+  <div class="bio-inner">
+    <h3>Ren&eacute; Dechamps Otamendi</h3>
+    <p class="bio-title">Founder &amp; Principal</p>
+    <p class="highlight">20 years building data and AI companies across Europe and the US. Now applying that expertise to criminal defence in Spanish courts.</p>
+    <p>Founded OX2 in 2003 &mdash; Spain's first digital analytics consultancy &mdash; sold in 2008. Avinash Kaushik listed it in the global top 10. Co-founded Mind Your Group (advisors: Avinash Kaushik, Jim Sterne, Bryan Eisenberg) with clients including Repsol, L'Or&eacute;al, Zara, and BBVA. Built Ogilvy's analytics department from scratch. Designed BBVA's global KPI architecture. Trained Google's sales teams (9.4/10 satisfaction).</p>
+    <p>Founded NextStage Analytics in Boston &mdash; Gartner Cool Vendor 2010 for gender and age prediction at 98% accuracy. Associate Professor at IE Business School and ISDI. 7 companies, 1 exit, 3 languages. Solvay Brussels School (MSc e-Business), UCLouvain (BA International Relations). Board Member, I-COM Global.</p>
+    <p>Third-generation legal family. Raised among briefs and judgments in Madrid. Every case handled personally.</p>
+    <div class="credentials">
+      <div class="credential">Brussels &middot; Madrid &middot; Boston</div>
+      <div class="credential">EN / FR / ES</div>
+      <div class="credential">7 companies, 1 exit</div>
+      <div class="credential">Gartner Cool Vendor 2010</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW WE WORK -->
+<div class="section">
+  <p class="section-label">Process</p>
+  <h2>How we work with your case</h2>
+  <p>A clear, predictable engagement model designed for cross-border coordination.</p>
+  <div class="proceso-grid">
+    <div class="proceso-step">
+      <div class="proceso-num">1</div>
+      <h3>Initial consultation</h3>
+      <p>30-minute call to understand the case, jurisdiction, timeline, and what you need from us. No charge.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-num">2</div>
+      <h3>Secure file transfer</h3>
+      <p>You send the case file through our encrypted channel. All processing happens locally &mdash; your data never leaves the dedicated machine.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-num">3</div>
+      <h3>First deliverable in 48h</h3>
+      <p>Operational dashboard, chronology, actor mapping, and initial analysis &mdash; all in English, ready for your team.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-num">4</div>
+      <h3>Ongoing support</h3>
+      <p>Continuous monitoring, procedural drafts, deadline alerts, and strategy updates. You direct the defence; we keep the intelligence current.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<div class="section">
+  <p class="section-label">What we deliver</p>
+  <h2>AI-powered intelligence for your Spanish case</h2>
+  <p>Every deliverable is reviewed by a human before it reaches you. The AI is our tool. The responsibility is ours.</p>
+  <div class="services">
+    <div class="service">
+      <h3>Case file dashboard</h3>
+      <p>Your entire Spanish case file in an interactive panel: parties, deadlines, evidence, procedural status, timeline. When opposing counsel references folio 3,247 from 8 months ago, you find it in 3 seconds. Delivered in English.</p>
+      <a href="/demos/dashboard/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Procedural drafts</h3>
+      <p>Draft submissions under Spanish criminal procedure (LECrim), structured with solid argumentation, verified references, and appropriate procedural tone. You review, adjust, and file. The heavy lifting is done.</p>
+      <a href="/demos/brief/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Defence strategy</h3>
+      <p>Before entering court, you know your three best exit scenarios, where the prosecution's case is weakest, and which motion to file first. Quantified decision trees with probability-weighted outcomes.</p>
+      <a href="/demos/strategy/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Deadline &amp; statute monitoring</h3>
+      <p>Automated tracking of limitation periods by offence, procedural deadlines, provisional detention limits, and appeal windows. Graduated alerts at 7 days, 3 days, and 24 hours. No deadline missed. Ever.</p>
+      <a href="/demos/deadlines/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Hearing preparation</h3>
+      <p>Every prosecution question anticipated, every trap identified, every response rehearsed. Your client enters the courtroom prepared. Contradictions across witness statements flagged automatically.</p>
+      <a href="/demos/hearing-prep/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Bilingual reporting</h3>
+      <p>Monthly auto-generated status reports in English for your client: case status, upcoming milestones, actions taken, strategic outlook. Reduces "how is my case going?" calls by 80%.</p>
+    </div>
+    <div class="service">
+      <h3>Case law analysis</h3>
+      <p>Relevant sentencias from the Tribunal Supremo and Audiencias Provinciales mapped to your case. Precedent trends, favourable ratios, and argumentation patterns extracted and quantified.</p>
+      <a href="/demos/case-law/" class="demo-link">View demo</a>
+    </div>
+    <div class="service">
+      <h3>Plea agreement analysis</h3>
+      <p>Conformidad modelling under Art. 787 and 801 LECrim. Scenario comparison between trial and negotiated outcomes, with risk-adjusted recommendations and Fiscal&iacute;a positioning intelligence.</p>
+      <a href="/demos/plea-analysis/" class="demo-link">View demo</a>
+    </div>
+  </div>
+</div>
+
+<!-- CASE TYPES -->
+<section class="cases-section">
+  <div class="cases-inner">
+    <p class="section-label">Case types</p>
+    <h2>Complex Spanish criminal matters with international dimensions</h2>
+    <div class="case-grid">
+      <div class="case-card">
+        <p class="case-type">Multi-defendant proceedings</p>
+        <h3>Macrocausas</h3>
+        <p>Large-scale cases with 50+ defendants, tens of thousands of folios, and years of proceedings. We processed 87,000 folios into an operational dashboard in 72 hours.</p>
+      </div>
+      <div class="case-card">
+        <p class="case-type">Financial crime</p>
+        <h3>Economic offences</h3>
+        <p>Fraud, embezzlement, money laundering, tax evasion, corporate criminal liability. 340+ relevant judgments analysed in 48 hours for a single case.</p>
+      </div>
+      <div class="case-card">
+        <p class="case-type">Cross-border</p>
+        <h3>Extraditions &amp; EAWs</h3>
+        <p>European Arrest Warrants, extradition proceedings, mutual legal assistance. Navigating Spanish procedure when your client is detained or wanted across jurisdictions.</p>
+      </div>
+      <div class="case-card">
+        <p class="case-type">Corporate exposure</p>
+        <h3>Executive liability</h3>
+        <p>When your multinational client's director or employee faces criminal charges in Spain. Board reporting, regulatory coordination, and parallel civil proceedings.</p>
+      </div>
+      <div class="case-card">
+        <p class="case-type">Corruption</p>
+        <h3>Public sector cases</h3>
+        <p>Bribery, influence peddling, misuse of public funds. Cases involving Spanish public entities, EU-funded projects, or government contracts.</p>
+      </div>
+      <div class="case-card">
+        <p class="case-type">Regulatory</p>
+        <h3>Competition &amp; sanctions</h3>
+        <p>Where criminal proceedings intersect with regulatory enforcement in Spain &mdash; CNMC, CNMV, Banco de Espa&ntilde;a matters with criminal exposure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<div class="security">
+  <div class="security-inner">
+    <p class="section-label">Security</p>
+    <h2>Local processing. Your data never leaves the machine.</h2>
+    <p>Criminal defence demands absolute confidentiality. We work exclusively with local AI models running on dedicated hardware in our Madrid office. No data is sent to cloud APIs &mdash; not to OpenAI, not to Google, not to any third party. Your case file stays on encrypted, dedicated hardware under lock and key.</p>
+    <p>Each engagement includes a case-specific NDA. This is the minimum standard you would expect from any professional on your team.</p>
+    <div class="sec-grid">
+      <div class="sec-item">
+        <div class="sec-icon">&#x1F5A5;</div>
+        <div class="sec-label">Local AI models<br>No cloud APIs</div>
+      </div>
+      <div class="sec-item">
+        <div class="sec-icon">&#x1F512;</div>
+        <div class="sec-label">AES-256<br>encryption</div>
+      </div>
+      <div class="sec-item">
+        <div class="sec-icon">&#x1F4DC;</div>
+        <div class="sec-label">Case-specific<br>NDA</div>
+      </div>
+      <div class="sec-item">
+        <div class="sec-icon">&#x1F6E1;</div>
+        <div class="sec-label">Full GDPR<br>compliance</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="section">
+  <p class="section-label">Investment</p>
+  <h2>Engagement models</h2>
+  <p>All engagements include a complimentary initial analysis so you can evaluate the service with your own case file. No credit card, no commitment.</p>
+  <div class="pricing">
+    <div class="price-card">
+      <p class="price-tier">Case analysis</p>
+      <p class="price-amount">5,000<span>&euro;</span></p>
+      <p class="price-note">One-time engagement</p>
+      <div class="price-includes">
+        <p>Full case file dashboard in English</p>
+        <p>Chronology and actor mapping</p>
+        <p>Initial strategic analysis</p>
+        <p>Deadline and limitation audit</p>
+        <p>Delivered within 5 business days</p>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <p class="price-tier">Ongoing support</p>
+      <p class="price-amount">6,000<span>&euro;/mo</span></p>
+      <p class="price-note">Setup: &euro;5,000 (incl. dedicated hardware)</p>
+      <div class="price-includes">
+        <p>Everything in Case Analysis</p>
+        <p>Up to 3 procedural drafts per month</p>
+        <p>Continuous deadline monitoring</p>
+        <p>Monthly strategy report in English</p>
+        <p>Priority response within 4 hours</p>
+      </div>
+    </div>
+    <div class="price-card">
+      <p class="price-tier">Full engagement</p>
+      <p class="price-amount">10,000<span>&euro;/mo</span></p>
+      <p class="price-note">Setup: &euro;6,000 (incl. dedicated hardware)</p>
+      <div class="price-includes">
+        <p>Everything in Ongoing Support</p>
+        <p>Unlimited procedural drafts</p>
+        <p>Complete defence strategy</p>
+        <p>Hearing preparation &amp; simulation</p>
+        <p>Direct partner-level availability</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">Common questions</p>
+  <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,4vw,36px);font-weight:500;color:var(--obsidian);margin-bottom:1.5rem;line-height:1.25">What partners ask before engaging</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you replace our local Spanish counsel?</div>
+    <div class="faq-a">No. Alc&aacute;zar AI works alongside your local counsel or as an independent analytical layer. We provide the intelligence, analysis, and drafts; your lawyers make the strategic decisions and file the submissions. We integrate with your existing team rather than replacing anyone.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does our case data pass through OpenAI or cloud providers?</div>
+    <div class="faq-a">No. All AI processing runs on local models installed on dedicated hardware in our Madrid office. No data is sent to OpenAI, Anthropic, Google, or any cloud API. Your case file never leaves the physical machine assigned to your engagement. This is a non-negotiable design decision, not an optional feature.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if you cannot continue the engagement?</div>
+    <div class="faq-a">Every engagement includes a documented handover protocol. Your dashboard, analysis, and all deliverables are yours regardless. In the event of service interruption, you receive complete export of all work product, documentation of methodology, and transition support to ensure continuity of your defence.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does billing work for Magic Circle or AmLaw firms?</div>
+    <div class="faq-a">We issue standard invoices with detailed engagement descriptions suitable for client pass-through billing. Our fees are structured to be transparently allocable to specific matters. We can adapt our billing format to your firm's internal requirements.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can we trial the service before committing?</div>
+    <div class="faq-a">Yes. Send us a redacted case file or a sample from your matter, and we deliver a preliminary analysis within 48 hours &mdash; at no cost. You evaluate the quality of the output before any commitment. In four years, no firm has declined to continue after the trial.</div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contact">
+  <div class="cta-inner">
+    <p class="section-label">Get started</p>
+    <h2>30 minutes to understand your case. No charge. No obligation.</h2>
+    <p>Tell us about the Spanish matter. We will explain how we work, what you can expect, and whether our service adds value to your specific situation.</p>
+    <a href="mailto:contact@murallaai.com?subject=Consultation%20request%20%E2%80%94%20Alc%C3%A1zar%20AI&body=Dear%20Ren%C3%A9%2C%0A%0AI%20am%20%5Bname%5D%20from%20%5Bfirm%5D.%0A%0AWe%20have%20a%20Spanish%20criminal%20matter%20that%20may%20benefit%20from%20your%20service.%0A%0AI%20am%20available%20for%20a%20call%20this%20week.%0A%0ABest%20regards." class="cta-btn">Schedule a consultation</a>
+    <p class="fine">We take a maximum of 8 concurrent engagements. If we cannot take your case immediately, we will let you know our next available slot.</p>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">ALC&Aacute;ZAR AI</div>
+  <p><a href="mailto:contact@murallaai.com">contact@murallaai.com</a> &nbsp;&middot;&nbsp; Madrid, Spain &nbsp;&middot;&nbsp; <a href="#">Privacy policy</a></p>
+  <p class="tagline">Your fortress in Spanish courts.</p>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>

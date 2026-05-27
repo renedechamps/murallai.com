@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Drafted Legal Briefs | Muralla AI — Interactive Demo</title>
+<meta name="description" content="Cuestiones previas, recursos, and escritos de defensa generated with artificial intelligence. Proper procedural structure and tone. Muralla AI demo.">
+<link rel="canonical" href="https://murallaai.com/demos/brief">
+<meta name="hreflang" content="en">
+<meta property="og:title" content="AI-Drafted Legal Briefs | Muralla AI — Interactive Demo">
+<meta property="og:description" content="Cuestiones previas, recursos, and escritos de defensa generated with artificial intelligence. Proper procedural structure and tone. Muralla AI demo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murallaai.com/demos/brief">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Muralla AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Muralla AI", "item": "https://murallaai.com/"},
+    {"@type": "ListItem", "position": 2, "name": "AI-Drafted Legal Briefs", "item": "https://murallaai.com/demos/brief"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1A0F0A;--gold:#B87333;--bg:#F8F7F4;--card:#FFFFFF;--text:#1a1a1a;--muted:#6B7280;--border:#E5E7EB}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.demo-banner{background:var(--gold);color:var(--navy);text-align:center;padding:8px;font-size:13px;font-weight:500;letter-spacing:0.5px}
+header{background:var(--navy);color:#fff;padding:24px 32px}
+header h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:600}
+header h1 span{color:var(--gold)}
+header p{font-size:14px;opacity:0.7;margin-top:4px}
+main{max-width:900px;margin:0 auto;padding:24px}
+.info-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.info-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px}
+.info-chip strong{color:var(--navy)}
+.doc-frame{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.08);overflow:hidden}
+.doc-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#FAFAFA;border-bottom:1px solid var(--border)}
+.doc-toolbar .filename{font-size:13px;font-weight:500;color:var(--navy)}
+.doc-toolbar .badges{display:flex;gap:8px}
+.badge{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:500}
+.badge-draft{background:#FEF3C7;color:#92400E}
+.badge-ai{background:#EEF2FF;color:#4338CA}
+.doc-content{padding:48px 56px;font-family:'Times New Roman',serif;font-size:15px;line-height:1.8;color:#1a1a1a}
+.doc-content h4{text-align:center;font-size:16px;margin-bottom:24px}
+.doc-content .intro{text-indent:2em;text-align:justify;margin-bottom:12px}
+.doc-content .section-title{font-weight:bold;font-size:14px;margin-top:28px;margin-bottom:12px;color:var(--navy);text-transform:uppercase;letter-spacing:0.3px}
+.doc-content .numbered{text-indent:2em;text-align:justify;margin-bottom:12px}
+.doc-content .suplico{text-align:center;font-weight:bold;margin:20px 0}
+.doc-content .firma{margin-top:40px;display:flex;justify-content:space-between;font-size:14px}
+.highlight{background:rgba(184,115,51,0.1);border-left:3px solid var(--gold);padding:2px 8px;margin:0 -8px}
+.comment-marker{position:relative;cursor:pointer}
+.comment-marker::after{content:'';position:absolute;top:-2px;right:-12px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.sidebar-note{position:absolute;right:-220px;width:200px;background:#FFFDF7;border:1px solid var(--gold);border-radius:8px;padding:10px;font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);line-height:1.4;display:none}
+.anno{background:rgba(184,115,51,0.12);padding:1px 3px;border-radius:2px;cursor:help}
+.anno-box{display:none;margin:8px 0 12px 2em;background:#FFFDF7;border:1px solid var(--gold);border-radius:8px;padding:12px;font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.5}
+.anno-box strong{color:var(--navy);font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+.anno.active{background:rgba(184,115,51,0.25)}
+.anno.active+.anno-box{display:block}
+.table-wrapper{margin:16px 0;overflow-x:auto}
+.doc-content table{width:100%;border-collapse:collapse;font-size:13px}
+.doc-content th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-weight:500;font-size:12px}
+.doc-content td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.doc-content tr:nth-child(even){background:#F9FAFB}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.feature{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.feature .icon{font-size:28px;margin-bottom:8px}
+.feature .feat-title{font-weight:600;font-size:14px;color:var(--navy)}
+.feature .feat-desc{font-size:12px;color:var(--muted);margin-top:4px}
+footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--gold);text-decoration:none}
+.watermark{position:fixed;bottom:16px;right:16px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:8px;font-size:11px;font-weight:500;z-index:100;opacity:0.9}
+@media(max-width:768px){.doc-content{padding:24px}.features{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-banner">INTERACTIVE DEMO — Fictitious case generated for illustrative purposes</div>
+<nav style="padding:8px 32px;font-size:13px;background:var(--bg);border-bottom:1px solid var(--border)" aria-label="Breadcrumb"><a href="https://murallaai.com" style="color:var(--gold);text-decoration:none">&larr; Back to Muralla AI</a></nav>
+<header>
+<h1>Escrito de <span>defensa</span> (defence brief)</h1>
+<p>Escrito de cuestiones previas (preliminary motions brief) — Operation Meridian — Case PA 15/2025</p>
+</header>
+
+<main>
+<div class="info-bar">
+<div class="info-chip"><strong>Type:</strong> Cuestiones previas (preliminary motions) (art. 786.2 LECrim)</div>
+<div class="info-chip"><strong>Length:</strong> 4 pages + comparative table</div>
+<div class="info-chip"><strong>Citations:</strong> 3 STS + 3 STC + 1 ECHR</div>
+<div class="info-chip"><strong>Status:</strong> Draft v2 — pending review</div>
+</div>
+
+<div class="features">
+<div class="feature">
+<div class="icon" style="color:var(--navy)">&#9878;</div>
+<div class="feat-title">Verified case law</div>
+<div class="feat-desc">Every citation from the TS, TC, and ECHR has been cross-checked against the CENDOJ database</div>
+</div>
+<div class="feature">
+<div class="icon" style="color:var(--gold)">&#9997;</div>
+<div class="feat-title">Proper procedural tone</div>
+<div class="feat-desc">Respectful technical language, free of sarcasm or aggression</div>
+</div>
+<div class="feature">
+<div class="icon" style="color:#059669">&#10004;</div>
+<div class="feat-title">You review and sign</div>
+<div class="feat-desc">The draft is yours: adjust whatever you want before filing</div>
+</div>
+</div>
+
+<div class="doc-frame">
+<div class="doc-toolbar">
+<span class="filename">CUESTIONES_PREVIAS_NAVARRO_v2.docx</span>
+<div class="badges">
+<span class="badge badge-draft">Draft v2</span>
+<span class="badge badge-ai">Generated with Muralla AI</span>
+</div>
+</div>
+<div class="doc-content">
+<h4>A LA SECCIÓN CUARTA DE LA SALA DE LO PENAL<br>DE LA AUDIENCIA NACIONAL</h4>
+
+<p class="intro">D.ª LAURA MARTINEZ SOLER, Procuradora de los Tribunales (colegiada no. 1.204), in the name and on behalf of <strong>D. CARLOS NAVARRO MENDOZA</strong>, under the legal counsel of Muralla AI, in Procedimiento Abreviado (summary proceedings) PA 15/2025 (origin: JCI no. 2, Diligencias Previas (preliminary investigation) 45/2022), hereby appears before the Court and, as best may proceed in law,</p>
+
+<p class="suplico">STATES:</p>
+
+<p class="intro">That, pursuant to Articles 786.2 and 793.2 of the Ley de Enjuiciamiento Criminal (Criminal Procedure Act), and the fundamental rights enshrined in Articles 24.1 and 24.2 of the Constitución, this defense raises the following <strong>CUESTIONES PREVIAS</strong> (preliminary motions) for resolution at the commencement of the juicio oral (oral trial) sessions:</p>
+
+<div class="section-title">I. Prescripción (statute of limitations) for offense B): falsedad en documento mercantil (forgery of commercial documents)</div>
+
+<p class="numbered"><strong>First.</strong> The offense of falsedad en documento mercantil under Article 392 of the Código Penal (Criminal Code), in conjunction with Article 390.1.2 of the same statute, carries a pena (sentence) of prisión (imprisonment) of six months to three years and a multa (fine) of six to twelve months. Pursuant to <span class="anno" onclick="this.classList.toggle('active')">Article 131.1 CP</span>, offenses carrying a maximum pena of three years are subject to a five-year prescripción period.</p>
+<div class="anno-box"><strong>Muralla AI Note:</strong> Art. 131.1 CP establishes tiered prescripción periods. For a maximum pena of 3 years: 5-year prescripción period. Verified in CENDOJ. STS 467/2018 confirms autonomous computation.</div>
+
+<p class="numbered"><strong>Second.</strong> The last allegedly forged invoice is dated <span class="anno" onclick="this.classList.toggle('active')">November 14, 2021</span>, as recorded in Annex III of the escrito de acusación (prosecution's indictment) (folio 1,247 of the case file). The instrucción (investigation) was opened on March 15, 2022, with no record of any interruption of the prescripción period prior to that date.</p>
+<div class="anno-box"><strong>Muralla AI Note:</strong> Date extracted from Annex III, folio 1,247. Verify against the physical case file. If the correct date is earlier, the argument is strengthened. If later than March 2017, recalculate the period.</div>
+
+<p class="numbered"><strong>Third.</strong> This defense invokes the doctrine of the Supreme Court (<span class="anno" onclick="this.classList.toggle('active')">STS 467/2018, of October 15</span>, Ponente: Excmo. Sr. D. Antonio del Moral Garcia), according to which the prescripción operates autonomously for each offense, and periods must be computed individually without cross-contamination between related criminal charges.</p>
+<div class="anno-box"><strong>Muralla AI Note:</strong> STS 467/2018 — verified in CENDOJ (ECLI:ES:TS:2018:3547). Ponente: Antonio del Moral Garcia. Ratio decidendi: autonomous prescripción per offense. Support: STS 213/2020 (same line).</div>
+
+<div style="margin:20px 0;padding:12px;background:#F0FDF4;border-radius:8px;border:1px solid #059669;font-family:'Inter',sans-serif;font-size:13px">
+<strong style="color:#059669">&#10004; Strong argument (85% confidence):</strong> The prescripción for offense B) is the most solid pillar of the escrito. The period has clearly elapsed and the case law is unanimous.
+</div>
+
+<div class="section-title">II. Violation of the ne bis in idem principle regarding offense A)</div>
+
+<p class="numbered"><strong>Fourth.</strong> The AEAT initiated procedimiento sancionador (administrative penalty proceedings) against TechVerde Solutions S.L. (file 2023/SA/28079/0412), which concluded with a resolución firme (final decision) dated July 18, 2024, imposing a sanción (penalty) of EUR 1,840,000 for a very serious infracción tributaria (tax infringement) (Art. 191.1 LGT), in relation to the same fiscal years 2019-2022.</p>
+
+<p class="numbered"><strong>Fifth.</strong> Mr. Navarro was declared responsable subsidiario (subsidiarily liable) for payment of said sanción by <span class="anno" onclick="this.classList.toggle('active')">resolución del TEAC of February 3, 2025</span>. He has already been personally sanctioned for the same facts.</p>
+<div class="anno-box"><strong>Muralla AI Note:</strong> Resolución del TEAC — request certified copy from client. This is the key piece of the ne bis in idem argument. Without it, the argument loses evidentiary weight before the Sala (Court).</div>
+
+<div style="margin:20px 0;padding:12px;background:#FFFBEB;border-radius:8px;border:1px solid #D97706;font-family:'Inter',sans-serif;font-size:13px">
+<strong style="color:#D97706">&#9888; Medium-risk argument (55% confidence):</strong> Ne bis in idem in mixed cases (administrative + criminal) is debated after the ECHR ruling in A and B v. Norway (2016). The Court may find no identity of legal basis if it identifies additional criminal wrongfulness.
+</div>
+
+<p style="text-align:center;margin:24px 0;font-size:13px;color:var(--muted)">[ ... sections III and IV omitted in this preview ... ]</p>
+
+<div class="section-title">Comparative table: position of the defendants</div>
+
+<div class="table-wrapper">
+<table>
+<thead><tr><th></th><th>M.A. Cortes (CEO)</th><th>C. Navarro (CFO)</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td><strong>Role</strong></td><td>Autor intelectual (mastermind)</td><td>Ejecutor material</td><td>Sin dominio funcional del hecho</td></tr>
+<tr><td><strong>Companies</strong></td><td>Beneficial owner</td><td>No connection</td><td>0% ownership</td></tr>
+<tr><td><strong>Profit</strong></td><td>EUR 1,870,000</td><td>EUR 0</td><td>Sin enriquecimiento</td></tr>
+<tr><td><strong>Pena</strong></td><td>2 years (suspended)</td><td>7 years requested</td><td style="color:#DC2626;font-weight:600">Disproportion x3.5</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="suplico">SUPLICO (PRAYER FOR RELIEF):</p>
+<p class="numbered"><strong>Primero.</strong> That this escrito be duly admitted and the cuestiones previas be deemed properly raised.</p>
+<p class="numbered"><strong>Segundo.</strong> That the prescripción for offense B) be declared [...]</p>
+<p class="numbered"><strong>Tercero.</strong> That a ruling be issued on the applicability of ne bis in idem [...]</p>
+<p class="numbered"><strong>Cuarto.</strong> That the Fiscalía (prosecution) be required to specify the theory of participation [...]</p>
+
+<div class="firma">
+<div>Fdo.: D. Rene Dechamps<br><span style="font-size:12px;color:var(--muted)">Letrado — Muralla AI</span></div>
+<div style="text-align:right">Fdo.: D.ª Laura Martinez Soler<br><span style="font-size:12px;color:var(--muted)">Procuradora, colegiada no. 1.204</span></div>
+</div>
+</div>
+</div>
+
+<div style="margin-top:24px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-align:center">
+<p style="font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px">The full document is available in .docx format</p>
+<p style="font-size:13px;color:var(--muted);margin-bottom:16px">4 pages, 3 cuestiones previas, comparative table, 7 verified case law citations</p>
+<a href="/demos/brief/CUESTIONES_PREVIAS_DEMO.docx" style="display:inline-block;background:var(--navy);color:var(--gold);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:500;font-size:14px">Download draft (.docx)</a>
+</div>
+</main>
+
+<footer>
+<div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Muralla <span style="color:var(--gold)">AI</span></div>
+Fictitious case for demonstration purposes. No data corresponds to real persons or proceedings.<br>
+<a href="https://murallaai.com">Back to murallaai.com</a>
+</footer>
+
+<div class="watermark">Muralla AI — Demo</div>
+</body>
+</html>

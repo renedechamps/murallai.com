@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Powered Trial Strategy | Muralla AI — Quantified Decision Tree</title>
+<meta name="description" content="Exit scenario analysis with probabilities, financial exposure, and action timeline. AI-powered criminal trial strategy. Muralla AI demo.">
+<link rel="canonical" href="https://murallaai.com/demos/strategy">
+<meta name="hreflang" content="en">
+<meta property="og:title" content="AI-Powered Trial Strategy | Muralla AI — Quantified Decision Tree">
+<meta property="og:description" content="Exit scenario analysis with probabilities, financial exposure, and action timeline. AI-powered criminal trial strategy. Muralla AI demo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murallaai.com/demos/strategy">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Muralla AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Muralla AI", "item": "https://murallaai.com/"},
+    {"@type": "ListItem", "position": 2, "name": "AI-Powered Trial Strategy", "item": "https://murallaai.com/demos/strategy"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1A0F0A;--gold:#B87333;--gold-light:#D4923A;--bg:#F8F7F4;--card:#FFFFFF;--text:#1a1a1a;--muted:#6B7280;--border:#E5E7EB;--success:#059669;--warning:#D97706;--danger:#DC2626;--info:#2563EB}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.demo-banner{background:var(--gold);color:var(--navy);text-align:center;padding:8px;font-size:13px;font-weight:500;letter-spacing:0.5px}
+header{background:var(--navy);color:#fff;padding:24px 32px}
+header h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:600}
+header h1 span{color:var(--gold)}
+header p{font-size:14px;opacity:0.7;margin-top:4px}
+main{max-width:1100px;margin:0 auto;padding:24px}
+h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px}
+h3{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:20px;margin-bottom:24px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.section{margin-bottom:32px}
+.tree{position:relative;padding:24px 0}
+.tree-node{position:relative;background:var(--card);border:2px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:16px;cursor:pointer;transition:all 0.3s}
+.tree-node:hover{border-color:var(--gold);box-shadow:0 4px 12px rgba(184,115,51,0.15)}
+.tree-node.selected{border-color:var(--gold);background:linear-gradient(135deg,#FFFDF7,#FFF)}
+.tree-node.best{border-color:var(--success);background:#F0FDF4}
+.tree-node.worst{border-color:var(--danger);background:#FEF2F2}
+.node-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.node-title{font-weight:600;font-size:15px}
+.node-prob{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.node-desc{font-size:13px;color:var(--muted)}
+.node-outcome{margin-top:10px;padding:10px;border-radius:8px;font-size:13px;display:none}
+.tree-node.selected .node-outcome{display:block}
+.branch{margin-left:32px;border-left:3px solid var(--border);padding-left:24px}
+.branch-label{font-size:12px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;margin:8px 0;padding:4px 0}
+.scenario-card{padding:16px;border-radius:10px;border:1px solid var(--border);margin-bottom:12px;cursor:pointer;transition:all 0.2s}
+.scenario-card:hover{border-color:var(--gold)}
+.scenario-card.active{border-color:var(--gold);box-shadow:0 2px 8px rgba(184,115,51,0.2)}
+.scenario-name{font-weight:600;font-size:14px;margin-bottom:4px}
+.scenario-prob{font-size:24px;font-weight:600;margin:8px 0}
+.scenario-detail{font-size:13px;color:var(--muted)}
+.cal-month{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.cal-item{padding:10px 12px;border-radius:8px;border:1px solid var(--border);font-size:12px}
+.cal-item .cal-date{font-weight:600;font-size:13px;color:var(--navy);margin-bottom:2px}
+.cal-item.urgent{border-color:var(--danger);background:#FEF2F2}
+.cal-item.important{border-color:var(--warning);background:#FFFBEB}
+.cal-item.normal{border-color:var(--success);background:#F0FDF4}
+.cal-item.strategic{border-color:var(--info);background:#EFF6FF}
+.metric-row{display:flex;gap:16px;margin-bottom:16px}
+.metric-box{flex:1;background:var(--bg);border-radius:8px;padding:14px;text-align:center}
+.metric-box .val{font-size:28px;font-weight:600}
+.metric-box .label{font-size:12px;color:var(--muted);margin-top:2px}
+.strength-bar{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.strength-bar .bar-label{width:180px;font-size:13px;flex-shrink:0}
+.strength-bar .bar-track{flex:1;height:20px;background:var(--border);border-radius:4px;overflow:hidden;position:relative}
+.strength-bar .bar-fill{height:100%;border-radius:4px;transition:width 0.6s}
+.strength-bar .bar-val{min-width:40px;text-align:right;font-size:13px;font-weight:600}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:500}
+footer{text-align:center;padding:32px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+footer a{color:var(--gold);text-decoration:none}
+.watermark{position:fixed;bottom:16px;right:16px;background:var(--navy);color:var(--gold);padding:6px 14px;border-radius:8px;font-size:11px;font-weight:500;letter-spacing:0.5px;z-index:100;opacity:0.9}
+@media(max-width:768px){.grid-2{grid-template-columns:1fr}.cal-month{grid-template-columns:1fr 1fr}.metric-row{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="demo-banner">INTERACTIVE DEMO — Fictitious case generated for illustrative purposes</div>
+<nav style="padding:8px 32px;font-size:13px;background:var(--bg);border-bottom:1px solid var(--border)" aria-label="Breadcrumb"><a href="https://murallaai.com" style="color:var(--gold);text-decoration:none">&larr; Back to Muralla AI</a></nav>
+<header>
+<h1>Trial <span>Strategy</span></h1>
+<p>Operation Meridian — Mr. Carlos Navarro Mendoza — Case PA 15/2025</p>
+</header>
+
+<main>
+
+<div class="section">
+<h2>Argument strength analysis by line of defense</h2>
+<div class="card">
+<div class="strength-bar"><span class="bar-label">Error de tipo (mistake of fact) (art. 14.1 CP)</span><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--success)"></div></div><span class="bar-val" style="color:var(--success)">75%</span></div>
+<div class="strength-bar"><span class="bar-label">Prescripción (statute of limitations), offense B)</span><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--success)"></div></div><span class="bar-val" style="color:var(--success)">85%</span></div>
+<div class="strength-bar"><span class="bar-label">Ne bis in idem, offense A)</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--warning)"></div></div><span class="bar-val" style="color:var(--warning)">55%</span></div>
+<div class="strength-bar"><span class="bar-label">Insuficiencia de la acusación (insufficiency of charges)</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--gold)"></div></div><span class="bar-val" style="color:var(--gold)">65%</span></div>
+<div class="strength-bar"><span class="bar-label">Conformidad (plea deal) of CEO as precedent</span><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--success)"></div></div><span class="bar-val" style="color:var(--success)">80%</span></div>
+<div class="strength-bar"><span class="bar-label">Atenuante (mitigating): reparación del daño</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--danger)"></div></div><span class="bar-val" style="color:var(--danger)">30%</span></div>
+<div class="strength-bar"><span class="bar-label">Dilaciones indebidas (undue delays)</span><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--gold)"></div></div><span class="bar-val" style="color:var(--gold)">60%</span></div>
+<div style="margin-top:12px;padding:12px;background:var(--bg);border-radius:8px;font-size:13px;color:var(--muted)">
+<strong style="color:var(--navy)">Summary:</strong> The strongest lines are prescripción (85%) and the conformidad of the CEO (80%). Ne bis in idem is a medium-risk argument: it depends on how the Sala assesses identity of legal basis. Reparación del daño is weak because the client has not made any voluntary payment.
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Decision tree: exit scenarios</h2>
+<p style="color:var(--muted);font-size:14px;margin-bottom:16px">Click on each scenario for details. Probabilities reflect Muralla AI's assessment based on comparable case law and the current state of the proceedings.</p>
+
+<div class="tree">
+<div class="tree-node" onclick="selectNode(this)" data-scenario="A">
+<div class="node-header">
+<span class="node-title">A. Sobreseimiento (dismissal) at cuestiones previas</span>
+<span class="node-prob" style="background:#ECFDF5;color:var(--success)">20%</span>
+</div>
+<div class="node-desc">The Sala upholds prescripción for offense B) and ne bis in idem for offense A) at the cuestiones previas stage.</div>
+<div class="node-outcome" style="background:#ECFDF5">
+<strong style="color:var(--success)">Outcome: Sobreseimiento libre (full dismissal).</strong> Navarro is absuelto (acquitted) of all charges before juicio oral. Pena: 0. Fianza (bail) refund.
+<br><br><strong>Strategy:</strong> Requires a flawless escrito de cuestiones previas and a Sala willing to rule before juicio oral. Low probability but maximum impact. Minimal procedural cost.
+<br><strong>Key case law:</strong> STS 467/2018 (autonomous prescripción); STC 177/1999 (ne bis in idem).
+</div>
+</div>
+
+<div class="tree-node" onclick="selectNode(this)" data-scenario="B">
+<div class="node-header">
+<span class="node-title">B. Absolución (acquittal) after juicio oral</span>
+<span class="node-prob" style="background:#ECFDF5;color:var(--success)">35%</span>
+</div>
+<div class="node-desc">Juicio oral takes place. The Sala finds error de tipo and insuficiencia de la acusación proven.</div>
+<div class="node-outcome" style="background:#ECFDF5">
+<strong style="color:var(--success)">Outcome: Sentencia absolutoria (not guilty verdict).</strong> Pena: 0. Possible compensation for wrongful prisión provisional (pretrial detention).
+<br><br><strong>Strategy:</strong> Primary line: error de tipo (art. 14.1 CP). Mr. Navarro believed he was executing legitimate transactions. Support: the CEO's emails demonstrate that instructions did not reveal the tax scheme. Forensic IT expert report (pericial informática) proves actual use of the software.
+<br><strong>Risk:</strong> The Sala may find that a CFO "should have known" of the irregularity (imprudencia grave / gross negligence).
+</div>
+</div>
+
+<div class="tree-node best" onclick="selectNode(this)" data-scenario="C">
+<div class="node-header">
+<span class="node-title">C. Conformidad (negotiated plea deal) with minimum penas</span>
+<span class="node-prob" style="background:#FEF3C7;color:var(--warning)">25%</span>
+</div>
+<div class="node-desc">The Fiscalía (prosecution) offers a conformidad with minimum penas after assessing the weakness of its case against Navarro.</div>
+<div class="node-outcome" style="background:#F0FDF4">
+<strong style="color:var(--success)">Outcome: Pena suspendida (suspended sentence) + multa reducida (reduced fine).</strong> Estimate: 6-12 months prisión (suspended) + EUR 50,000 multa. No ingreso en prisión (no imprisonment).
+<br><br><strong>Strategy:</strong> Procedural attrition through well-founded weekly escritos ("adapted persistent pressure"). Each escrito raises the cost of maintaining the acusación (prosecution). The CEO's conformidad creates an inescapable proportionality precedent: if the autor intelectual (mastermind) received 2 years suspended, pursuing 7 for the ejecutor material (material executor) is unsustainable.
+<br><strong>Conditions for acceptance:</strong> Only if it includes suspensión de la pena + reduced pena under 2 years + no antecedentes penales (criminal record).
+<br><em>This is the scenario recommended by Muralla AI as optimal in cost/benefit terms.</em>
+</div>
+</div>
+
+<div class="tree-node" onclick="selectNode(this)" data-scenario="D">
+<div class="node-header">
+<span class="node-title">D. Condena (conviction) with significant atenuantes (mitigating factors)</span>
+<span class="node-prob" style="background:#FFFBEB;color:var(--warning)">15%</span>
+</div>
+<div class="node-desc">Condena for offense A) with atenuantes of dilaciones indebidas and analogous cooperation.</div>
+<div class="node-outcome" style="background:#FFFBEB">
+<strong style="color:var(--warning)">Outcome: Pena reducida (reduced sentence).</strong> Estimate: 2-3 years prisión (possible suspensión) + EUR 500,000 multa. Viable recurso de casación (appeal to the Tribunal Supremo).
+<br><br><strong>Atenuantes available:</strong> Dilaciones indebidas (4 years of instrucción), effective cooperation (Navarro has provided exhaustive testimony), partial reparación del daño (if he deposits a sum).
+<br><strong>Post-sentencing strategy:</strong> Recurso de casación focusing on the application of error de tipo and proportionality with the CEO's pena.
+</div>
+</div>
+
+<div class="tree-node worst" onclick="selectNode(this)" data-scenario="E">
+<div class="node-header">
+<span class="node-title">E. Condena close to the pena solicitada (requested sentence)</span>
+<span class="node-prob" style="background:#FEF2F2;color:var(--danger)">5%</span>
+</div>
+<div class="node-desc">Worst-case scenario: the Sala convicts on both offenses without significant atenuantes.</div>
+<div class="node-outcome" style="background:#FEF2F2">
+<strong style="color:var(--danger)">Outcome: Pena severa (severe sentence).</strong> Estimate: 5-7 years prisión + full multa. Ingreso en prisión.
+<br><br><strong>Why this is unlikely (5%):</strong> The CEO's conformidad at 2 years suspended makes it virtually impossible for the Sala to impose 7 on the ejecutor material. The prescripción for offense B) is solid. The pericial de la defensa (defense expert report) proves the services were real.
+<br><strong>Contingency strategy:</strong> Recurso de casación + recurso de amparo (constitutional appeal to the TC) for disproportionality (art. 14 CE). ECHR as last resort.
+</div>
+</div>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="card">
+<h2>Weighted outcome probability</h2>
+<div style="position:relative;height:280px;margin-top:8px">
+<canvas id="outcomeChart"></canvas>
+</div>
+<div style="margin-top:8px;font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#059669;margin-right:4px"></span>Favorable (55%)</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#B87333;margin-right:4px"></span>Acceptable (25%)</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#D97706;margin-right:4px"></span>Unfavorable (15%)</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#DC2626;margin-right:4px"></span>Adverse (5%)</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Financial exposure by scenario</h2>
+<div style="position:relative;height:280px;margin-top:8px">
+<canvas id="econChart"></canvas>
+</div>
+<div style="margin-top:8px;font-size:12px;color:var(--muted);text-align:center">
+Current fianza (bail): EUR 100,000 (recoverable in scenarios A and B)
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Optimal action timeline</h2>
+<p style="font-size:14px;color:var(--muted);margin-bottom:16px">Action plan through the estimated trial date (November 2026).</p>
+
+<h3 style="margin-top:16px">June 2026</h3>
+<div class="cal-month">
+<div class="cal-item urgent"><div class="cal-date">Week 1 (Jun 1-7)</div>Deliver pericial informática (forensic IT report). Review final report with perito.</div>
+<div class="cal-item important"><div class="cal-date">Week 2 (Jun 8-14)</div>Escrito proposing SaaS perito (expert witness) (deadline Jun 7).</div>
+<div class="cal-item normal"><div class="cal-date">Week 3 (Jun 15-21)</div>Meeting with client: review conformidad strategy. Evaluate Fiscalía's offer.</div>
+<div class="cal-item strategic"><div class="cal-date">Week 4 (Jun 22-28)</div>Weekly escrito #1: impact of CEO's conformidad on proportionality.</div>
+</div>
+
+<h3>July 2026</h3>
+<div class="cal-month">
+<div class="cal-item strategic"><div class="cal-date">Week 1</div>Escrito #2: prescripción for offense B) — request for early ruling.</div>
+<div class="cal-item normal"><div class="cal-date">Week 2</div>Preparation of CEO interrogatorio (cross-examination) as testigo (witness). Script of 40 questions.</div>
+<div class="cal-item strategic"><div class="cal-date">Week 3</div>Escrito #3: ne bis in idem — attach resolución firme del TEAC.</div>
+<div class="cal-item normal"><div class="cal-date">Week 4</div>Mock juicio oral with client. Psychological preparation.</div>
+</div>
+
+<h3>August - September 2026</h3>
+<div class="cal-month">
+<div class="cal-item strategic"><div class="cal-date">August</div>Weekly escritos #4-#7: insuficiencia del relato fáctico, absence of functional control, error de tipo.</div>
+<div class="cal-item important"><div class="cal-date">Sep — Week 1</div>Conformidad negotiation window. Contact Fiscalía via Procuraduría.</div>
+<div class="cal-item important"><div class="cal-date">Sep — Week 3</div>Deadline for escrito de cuestiones previas (art. 786.2 LECrim).</div>
+<div class="cal-item normal"><div class="cal-date">Sep — Week 4</div>Final review of escrito de calificación definitiva (definitive conclusions brief).</div>
+</div>
+
+<h3>October - November 2026</h3>
+<div class="cal-month">
+<div class="cal-item urgent"><div class="cal-date">Oct — Week 2</div>Deadline: decision on conformidad offer if one exists.</div>
+<div class="cal-item important"><div class="cal-date">Oct — Week 4</div>Final escrito de calificación provisional (pre-trial brief). Consolidation of all arguments.</div>
+<div class="cal-item urgent"><div class="cal-date">Nov — Week 3</div>JUICIO ORAL (estimated date 11/25/2026). Expected sesiones: 3 days.</div>
+<div class="cal-item normal"><div class="cal-date">Post-trial</div>Await sentencia (verdict). Preemptive preparation of recurso de casación (Supreme Court appeal).</div>
+</div>
+
+<div style="margin-top:16px;display:flex;gap:16px;font-size:12px;color:var(--muted)">
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#FEF2F2;border:1px solid var(--danger);margin-right:4px"></span>Urgent / critical deadline</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#FFFBEB;border:1px solid var(--warning);margin-right:4px"></span>Important</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#F0FDF4;border:1px solid var(--success);margin-right:4px"></span>Normal</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#EFF6FF;border:1px solid var(--info);margin-right:4px"></span>Strategic (weekly briefs)</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Executive strategy summary</h2>
+<div class="metric-row">
+<div class="metric-box"><div class="val" style="color:var(--success)">55%</div><div class="label">Prob. of favorable outcome</div></div>
+<div class="metric-box"><div class="val" style="color:var(--navy)">183</div><div class="label">Days until trial (est.)</div></div>
+<div class="metric-box"><div class="val" style="color:var(--gold)">12</div><div class="label">Planned briefs</div></div>
+<div class="metric-box"><div class="val" style="color:var(--info)">3</div><div class="label">Active exit paths</div></div>
+</div>
+<div style="padding:16px;background:var(--bg);border-radius:8px;font-size:14px;line-height:1.8">
+<strong style="color:var(--navy)">Muralla AI Recommendation:</strong> The optimal strategy combines three simultaneous lines: (1) procedural pressure through well-founded weekly escritos to raise the cost of maintaining the acusación; (2) exhaustive preparation for juicio oral with a focus on error de tipo and insuficiencia de la acusación; and (3) opening a negotiation channel for a conformidad with minimum penas, using the CEO's conformidad as a proportionality benchmark.
+<br><br>
+Scenario C (conformidad: 6-12 months suspended + reduced multa) offers the best cost/benefit balance. However, the strength of the defense arguments (especially prescripción at 85% and CEO conformidad at 80%) justifies maintaining pressure and not accepting a premature conformidad.
+</div>
+</div>
+
+</main>
+
+<footer>
+<div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Muralla <span style="color:var(--gold)">AI</span></div>
+This is a fictitious case for demonstration purposes. No data corresponds to real persons or proceedings.<br>
+<a href="https://murallaai.com">Back to murallaai.com</a>
+</footer>
+
+<div class="watermark">Muralla AI — Demo</div>
+
+<script>
+function selectNode(el){
+document.querySelectorAll('.tree-node').forEach(n=>n.classList.remove('selected'));
+el.classList.add('selected');
+}
+
+new Chart(document.getElementById('outcomeChart'),{
+type:'doughnut',
+data:{
+labels:['A. Sobreseimiento','B. Absolución','C. Conformidad','D. Condena atenuada','E. Condena severa'],
+datasets:[{data:[20,35,25,15,5],backgroundColor:['#059669','#34D399','#B87333','#D97706','#DC2626'],borderWidth:2,borderColor:'#fff'}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false,
+cutout:'55%',
+plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.label+': '+ctx.raw+'%'}}}
+}
+});
+
+new Chart(document.getElementById('econChart'),{
+type:'bar',
+data:{
+labels:['A','B','C','D','E'],
+datasets:[{
+label:'Estimated financial cost',
+data:[0,0,50000,500000,4606480],
+backgroundColor:['#059669','#34D399','#B87333','#D97706','#DC2626'],
+borderRadius:6
+}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false,
+scales:{
+y:{ticks:{callback:v=>{if(v>=1e6)return(v/1e6).toFixed(1)+'M';if(v>=1e3)return(v/1e3)+'k';return v}},grid:{color:'#E5E7EB'}},
+x:{grid:{display:false},ticks:{font:{size:12}}}
+},
+plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR'}).format(ctx.raw)}}}
+}
+});
+</script>
+</body>
+</html>
